@@ -1,0 +1,238 @@
+/* OpportunityCard Styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card:focus-within {
+  outline: 2px solid var(--focus-color, #3b82f6);
+  outline-offset: 2px;
+}
+
+/* Cover Image */
+.imageWrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--placeholder-bg, #f3f4f6);
+  overflow: hidden;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-light, #dbeafe) 0%, var(--accent-lighter, #eff6ff) 100%);
+}
+
+.imagePlaceholder svg {
+  width: 48px;
+  height: 48px;
+  color: var(--accent-color, #3b82f6);
+  opacity: 0.5;
+}
+
+/* Badges */
+.badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--text-secondary, #4b5563);
+}
+
+.dateBadge {
+  background: var(--accent-color, #3b82f6);
+  color: white;
+}
+
+.virtualBadge {
+  background: var(--virtual-color, #8b5cf6);
+  color: white;
+}
+
+.featuredBadge {
+  background: var(--featured-color, #f59e0b);
+  color: white;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary, #111827);
+}
+
+.titleLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.titleLink:hover {
+  color: var(--accent-color, #3b82f6);
+}
+
+.summary {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-secondary, #6b7280);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Meta Info */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.metaRow svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 4px;
+  background: var(--tag-bg, #f3f4f6);
+  color: var(--tag-color, #4b5563);
+}
+
+.causeTag {
+  background: var(--cause-bg, #dcfce7);
+  color: var(--cause-color, #166534);
+}
+
+.contributionTag {
+  background: var(--contribution-bg, #dbeafe);
+  color: var(--contribution-color, #1e40af);
+}
+
+/* Organizer */
+.organizer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.organizerLogo {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: var(--placeholder-bg, #f3f4f6);
+}
+
+.organizerName {
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Spots Available */
+.spots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.spots svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.spotsLow {
+  color: var(--warning-color, #dc2626);
+  font-weight: 500;
+}
+
+.spotsLow svg {
+  color: var(--warning-color, #dc2626);
+}
+
+/* Status */
+.statusOngoing {
+  color: var(--success-color, #059669);
+}
+
+.statusCompleted {
+  opacity: 0.6;
+}

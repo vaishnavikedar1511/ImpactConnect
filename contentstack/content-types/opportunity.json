@@ -1,0 +1,272 @@
+{
+  "title": "Opportunity",
+  "uid": "opportunity",
+  "description": "Volunteering and social impact opportunities",
+  "schema": [
+    {
+      "display_name": "Title",
+      "uid": "title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Name of the opportunity",
+        "_default": true
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "URL Slug",
+      "uid": "slug",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL-friendly identifier"
+      },
+      "mandatory": true,
+      "unique": true,
+      "multiple": false
+    },
+    {
+      "display_name": "Summary",
+      "uid": "summary",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Brief description for cards",
+        "multiline": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Description",
+      "uid": "description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Full description",
+        "multiline": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Cover Image",
+      "uid": "cover_image",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Main image"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Status",
+      "uid": "status",
+      "data_type": "text",
+      "display_type": "dropdown",
+      "field_metadata": {
+        "description": "Current status of the opportunity"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "enum": {
+        "advanced": false,
+        "choices": [
+          { "value": "upcoming" },
+          { "value": "ongoing" },
+          { "value": "completed" },
+          { "value": "cancelled" }
+        ]
+      }
+    },
+    {
+      "display_name": "Is Virtual",
+      "uid": "is_virtual",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Can be done remotely/online"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Country",
+      "uid": "country",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Country name"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "State",
+      "uid": "state",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "State or Province"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "City",
+      "uid": "city",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "City name"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Address",
+      "uid": "address",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Detailed venue address",
+        "multiline": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Cause Slugs",
+      "uid": "cause_slugs",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Related cause slugs (e.g., education, environment)"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": true
+    },
+    {
+      "display_name": "Contribution Types",
+      "uid": "contribution_types",
+      "data_type": "text",
+      "display_type": "dropdown",
+      "field_metadata": {
+        "description": "How people can contribute"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": true,
+      "enum": {
+        "advanced": false,
+        "choices": [
+          { "value": "physical_effort" },
+          { "value": "skills" },
+          { "value": "resources" },
+          { "value": "time" }
+        ]
+      }
+    },
+    {
+      "display_name": "Start Date",
+      "uid": "start_date",
+      "data_type": "isodate",
+      "field_metadata": {
+        "description": "When the opportunity starts"
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "End Date",
+      "uid": "end_date",
+      "data_type": "isodate",
+      "field_metadata": {
+        "description": "When the opportunity ends"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Start Time",
+      "uid": "start_time",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Start time (e.g., 09:00)"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "End Time",
+      "uid": "end_time",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "End time (e.g., 17:00)"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Organizer Name",
+      "uid": "organizer_name",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Name of the organizer"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Organizer Email",
+      "uid": "organizer_email",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Contact email"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Spots Available",
+      "uid": "spots_available",
+      "data_type": "number",
+      "field_metadata": {
+        "description": "Number of volunteer spots"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Requirements",
+      "uid": "requirements",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "What volunteers need",
+        "multiline": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    }
+  ],
+  "options": {
+    "title": "title",
+    "publishable": true,
+    "is_page": false,
+    "singleton": false,
+    "sub_title": ["city", "status"],
+    "url_pattern": "/opportunities/:slug",
+    "url_prefix": "/"
+  }
+}

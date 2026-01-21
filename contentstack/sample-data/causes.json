@@ -1,0 +1,84 @@
+{
+  "entries": [
+    {
+      "uid": "cause_environment",
+      "name": "Environment",
+      "slug": "environment",
+      "description": "Conservation, sustainability, and environmental protection initiatives",
+      "color": "#22c55e",
+      "display_order": 1
+    },
+    {
+      "uid": "cause_education",
+      "name": "Education",
+      "slug": "education",
+      "description": "Teaching, mentoring, and educational support programs",
+      "color": "#3b82f6",
+      "display_order": 2
+    },
+    {
+      "uid": "cause_health",
+      "name": "Health",
+      "slug": "health",
+      "description": "Healthcare access, blood donation, and medical assistance",
+      "color": "#ef4444",
+      "display_order": 3
+    },
+    {
+      "uid": "cause_poverty",
+      "name": "Poverty Alleviation",
+      "slug": "poverty-alleviation",
+      "description": "Food distribution, shelter, and economic empowerment",
+      "color": "#f97316",
+      "display_order": 4
+    },
+    {
+      "uid": "cause_animal_welfare",
+      "name": "Animal Welfare",
+      "slug": "animal-welfare",
+      "description": "Animal rescue, shelter support, and wildlife conservation",
+      "color": "#a855f7",
+      "display_order": 5
+    },
+    {
+      "uid": "cause_elderly",
+      "name": "Elderly Care",
+      "slug": "elderly-care",
+      "description": "Support and companionship for senior citizens",
+      "color": "#ec4899",
+      "display_order": 6
+    },
+    {
+      "uid": "cause_children",
+      "name": "Child Welfare",
+      "slug": "child-welfare",
+      "description": "Child education, nutrition, and protection programs",
+      "color": "#06b6d4",
+      "display_order": 7
+    },
+    {
+      "uid": "cause_disaster",
+      "name": "Disaster Relief",
+      "slug": "disaster-relief",
+      "description": "Emergency response and rehabilitation support",
+      "color": "#eab308",
+      "display_order": 8
+    },
+    {
+      "uid": "cause_community",
+      "name": "Community Development",
+      "slug": "community-development",
+      "description": "Local infrastructure and community building initiatives",
+      "color": "#14b8a6",
+      "display_order": 9
+    },
+    {
+      "uid": "cause_arts",
+      "name": "Arts & Culture",
+      "slug": "arts-culture",
+      "description": "Cultural preservation, arts education, and creative programs",
+      "color": "#8b5cf6",
+      "display_order": 10
+    }
+  ]
+}

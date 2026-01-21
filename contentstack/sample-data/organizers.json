@@ -1,0 +1,105 @@
+{
+  "entries": [
+    {
+      "uid": "org_clean_earth",
+      "name": "Clean Earth Foundation",
+      "slug": "clean-earth-foundation",
+      "type": "ngo",
+      "tagline": "Building a sustainable future through community action",
+      "description": "Clean Earth Foundation is a non-profit organization dedicated to environmental conservation. We organize beach cleanups, tree plantations, and awareness campaigns across India.",
+      "contact_email": "hello@cleanearthfoundation.org",
+      "contact_phone": "+91 98765 43210",
+      "website": "https://cleanearthfoundation.org",
+      "social_links": {
+        "facebook": "https://facebook.com/cleanearthfoundation",
+        "instagram": "https://instagram.com/cleanearthfoundation",
+        "twitter": "https://twitter.com/cleanearth_in"
+      },
+      "locations": [
+        { "uid": "loc_mumbai" },
+        { "uid": "loc_pune" }
+      ],
+      "verification_status": "verified",
+      "founded_year": 2018,
+      "focus_areas": ["Ocean Conservation", "Tree Plantation", "Waste Management"]
+    },
+    {
+      "uid": "org_teach_india",
+      "name": "Teach India Initiative",
+      "slug": "teach-india-initiative",
+      "type": "ngo",
+      "tagline": "Quality education for every child",
+      "description": "Teach India Initiative works to bridge the educational gap by providing free tutoring, mentorship, and learning resources to underprivileged children.",
+      "contact_email": "volunteer@teachindia.org",
+      "contact_phone": "+91 98765 12345",
+      "website": "https://teachindia.org",
+      "social_links": {
+        "facebook": "https://facebook.com/teachindiainit",
+        "instagram": "https://instagram.com/teachindia"
+      },
+      "locations": [
+        { "uid": "loc_bangalore" },
+        { "uid": "loc_delhi" },
+        { "uid": "loc_chennai" }
+      ],
+      "verification_status": "verified",
+      "founded_year": 2015,
+      "focus_areas": ["Primary Education", "STEM", "Digital Literacy"]
+    },
+    {
+      "uid": "org_blood_heroes",
+      "name": "Blood Heroes Network",
+      "slug": "blood-heroes-network",
+      "type": "community_group",
+      "tagline": "Every drop counts, every hero matters",
+      "description": "A community-driven network connecting blood donors with those in need. We organize regular blood donation camps and maintain an emergency donor database.",
+      "contact_email": "donate@bloodheroes.in",
+      "contact_phone": "+91 98765 67890",
+      "social_links": {
+        "instagram": "https://instagram.com/bloodheroes",
+        "twitter": "https://twitter.com/bloodheroes_in"
+      },
+      "locations": [
+        { "uid": "loc_mumbai" },
+        { "uid": "loc_bangalore" },
+        { "uid": "loc_delhi" },
+        { "uid": "loc_hyderabad" }
+      ],
+      "verification_status": "verified",
+      "founded_year": 2020,
+      "focus_areas": ["Blood Donation", "Healthcare Access"]
+    },
+    {
+      "uid": "org_priya_sharma",
+      "name": "Priya Sharma",
+      "slug": "priya-sharma",
+      "type": "individual",
+      "tagline": "Community organizer & social activist",
+      "description": "Priya is a social activist organizing local community initiatives in Mumbai. She focuses on women's empowerment and skill development programs.",
+      "contact_email": "priya.sharma@email.com",
+      "locations": [
+        { "uid": "loc_mumbai" }
+      ],
+      "verification_status": "verified",
+      "focus_areas": ["Women Empowerment", "Skill Development"]
+    },
+    {
+      "uid": "org_green_warriors",
+      "name": "Green Warriors Pune",
+      "slug": "green-warriors-pune",
+      "type": "community_group",
+      "tagline": "Making Pune greener, one tree at a time",
+      "description": "A passionate group of environmentalists working to increase green cover in Pune through tree plantation drives and urban gardening initiatives.",
+      "contact_email": "greenwarriors.pune@gmail.com",
+      "social_links": {
+        "instagram": "https://instagram.com/greenwarriorspune"
+      },
+      "locations": [
+        { "uid": "loc_pune" }
+      ],
+      "verification_status": "pending",
+      "founded_year": 2022,
+      "focus_areas": ["Tree Plantation", "Urban Gardening"]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+/* OpportunityList Styles */
+
+.container {
+  width: 100%;
+}
+
+/* Info Banner */
+.infoBanner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  background: var(--info-bg, #eff6ff);
+  border: 1px solid var(--info-border, #bfdbfe);
+  border-radius: 10px;
+  color: var(--info-text, #1e40af);
+  font-size: 0.9375rem;
+}
+
+.infoBanner svg {
+  flex-shrink: 0;
+  color: var(--info-icon, #3b82f6);
+}
+
+.infoBanner p {
+  margin: 0;
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.resultCount {
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.resultCount strong {
+  color: var(--text-primary, #111827);
+  font-weight: 600;
+}
+
+/* Status Filter */
+.statusFilter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--input-bg, #f3f4f6);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.statusButton {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.statusButton:hover {
+  color: var(--text-primary, #111827);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.statusButtonActive {
+  color: var(--accent-color, #3b82f6);
+  background: var(--card-bg, #ffffff);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.statusButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--focus-ring, rgba(59, 130, 246, 0.15));
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border: 3px solid var(--border-color, #e5e7eb);
+  border-top-color: var(--accent-color, #3b82f6);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Empty State */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: var(--empty-bg, #f9fafb);
+  border-radius: 12px;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.emptyTitle {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.emptyText {
+  margin: 0 0 24px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+  max-width: 400px;
+}
+
+.emptyButton {
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.emptyButton:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+.emptyButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.3));
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color, #e5e7eb);
+}
+
+.pageButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary, #6b7280);
+  background: var(--button-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+  background: var(--hover-bg, #f3f4f6);
+  border-color: var(--border-hover, #d1d5db);
+}
+
+.pageButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.15));
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageButtonActive {
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border-color: var(--accent-color, #3b82f6);
+}
+
+.pageButtonActive:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+.pageInfo {
+  padding: 0 16px;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Load More */
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-color, #3b82f6);
+  background: var(--accent-light, #eff6ff);
+  border: 2px solid var(--accent-color, #3b82f6);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.loadMoreButton:hover {
+  background: var(--accent-color, #3b82f6);
+  color: white;
+}
+
+.loadMoreButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--focus-ring, rgba(59, 130, 246, 0.2));
+}
+
+.loadMoreButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Skeleton Loading */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base, #f3f4f6) 25%,
+    var(--skeleton-highlight, #e5e7eb) 50%,
+    var(--skeleton-base, #f3f4f6) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 12px;
+}
+
+.skeletonCard {
+  height: 380px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

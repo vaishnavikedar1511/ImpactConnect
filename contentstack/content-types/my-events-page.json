@@ -1,0 +1,152 @@
+{
+  "title": "My Events Page",
+  "uid": "my_events_page",
+  "description": "My Events page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main page heading",
+        "default_value": "My Events",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Page Subtitle",
+      "uid": "page_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle below the heading",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Pending Section Title",
+      "uid": "pending_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for pending events section",
+        "default_value": "Pending Approval",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Pending Section Description",
+      "uid": "pending_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description for pending events",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Published Section Title",
+      "uid": "published_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for published events section",
+        "default_value": "Published Events",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Published Section Description",
+      "uid": "published_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description for published events",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Title",
+      "uid": "empty_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title when no events exist",
+        "default_value": "No Events Yet",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Message",
+      "uid": "empty_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message when no events exist",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Create Event CTA Text",
+      "uid": "create_cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for create event button",
+        "default_value": "Create Your First Event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Create Event CTA Link",
+      "uid": "create_cta_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link for create event button",
+        "default_value": "/create-event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

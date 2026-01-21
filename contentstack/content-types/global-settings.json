@@ -1,0 +1,172 @@
+{
+  "title": "Global Settings",
+  "uid": "global_settings",
+  "description": "Site-wide settings and SEO defaults - Singleton",
+  "schema": [
+    {
+      "display_name": "Site Name",
+      "uid": "site_name",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Default site name for SEO",
+        "default_value": "ImpactConnect",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Default Meta Title",
+      "uid": "default_meta_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Default page title template",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Default Meta Description",
+      "uid": "default_meta_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Default meta description for SEO",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Default OG Image URL",
+      "uid": "default_og_image_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to default social sharing image",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Favicon URL",
+      "uid": "favicon_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to site favicon",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Google Analytics ID",
+      "uid": "google_analytics_id",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "GA4 Measurement ID",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Enable Registration",
+      "uid": "enable_registration",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Allow users to register for events",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Enable Event Creation",
+      "uid": "enable_event_creation",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Allow users to submit new events",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Maintenance Mode",
+      "uid": "maintenance_mode",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Put site in maintenance mode",
+        "default_value": false
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Maintenance Message",
+      "uid": "maintenance_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message shown during maintenance",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Email",
+      "uid": "contact_email",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Primary contact email",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Support Email",
+      "uid": "support_email",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Support email address",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "site_name",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "title": "Announcement Banner",
+  "uid": "announcement_banner",
+  "description": "Site-wide announcement banner - Singleton",
+  "schema": [
+    {
+      "display_name": "Enabled",
+      "uid": "enabled",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Show or hide the banner",
+        "default_value": false
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Message",
+      "uid": "message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Banner text message",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Link Text",
+      "uid": "link_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Optional call-to-action text",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Link URL",
+      "uid": "link_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link destination",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Background Color",
+      "uid": "background_color",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Banner background style (info, success, warning, error, accent)",
+        "default_value": "info",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Dismissible",
+      "uid": "dismissible",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Allow users to close the banner",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Start Date",
+      "uid": "start_date",
+      "data_type": "isodate",
+      "field_metadata": {
+        "description": "When to start showing the banner"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "End Date",
+      "uid": "end_date",
+      "data_type": "isodate",
+      "field_metadata": {
+        "description": "When to stop showing the banner"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Icon",
+      "uid": "icon",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Emoji or icon to show before message",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "message",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

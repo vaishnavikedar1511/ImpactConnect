@@ -1,0 +1,279 @@
+{
+  "title": "Create Event Page",
+  "uid": "create_event_page",
+  "description": "Create/Submit Event page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main page heading",
+        "default_value": "Create an Event",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Page Subtitle",
+      "uid": "page_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle below heading",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Details Section Title",
+      "uid": "section_details_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for event details section",
+        "default_value": "Event Details",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Location Section Title",
+      "uid": "section_location_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for location section",
+        "default_value": "Location",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Virtual Event Label",
+      "uid": "virtual_label",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Label for virtual checkbox",
+        "default_value": "This is a virtual/remote event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Categories Section Title",
+      "uid": "section_categories_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for categories section",
+        "default_value": "Categories",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Date Time Section Title",
+      "uid": "section_datetime_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for date/time section",
+        "default_value": "Date & Time",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Section Title",
+      "uid": "section_contact_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for contact section",
+        "default_value": "Contact Information",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Additional Info Section Title",
+      "uid": "section_additional_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for additional info section",
+        "default_value": "Additional Information",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Submit Button Text",
+      "uid": "submit_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for submit button",
+        "default_value": "Submit Event for Review",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Submitting Text",
+      "uid": "submitting_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text shown while submitting",
+        "default_value": "Submitting...",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Success Icon",
+      "uid": "success_icon",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Emoji/icon for success state",
+        "default_value": "🎉",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Success Title",
+      "uid": "success_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title shown on successful submission",
+        "default_value": "Event Submitted!",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Success Message",
+      "uid": "success_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message shown on successful submission",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Success Button Text",
+      "uid": "success_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for button after success",
+        "default_value": "Browse Opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Success Button Link",
+      "uid": "success_button_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link for success button",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Field Labels JSON",
+      "uid": "field_labels_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Form field labels as JSON object",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Field Placeholders JSON",
+      "uid": "field_placeholders_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Form placeholders as JSON object",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Validation Messages JSON",
+      "uid": "validation_messages_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Validation error messages as JSON object",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

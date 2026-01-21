@@ -1,0 +1,236 @@
+{
+  "title": "About Page",
+  "uid": "about_page",
+  "description": "About us page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main heading",
+        "default_value": "About ImpactConnect",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Hero Subtitle",
+      "uid": "hero_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle under the main heading",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Hero Image URL",
+      "uid": "hero_image_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to hero section background image",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Mission Title",
+      "uid": "mission_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Mission section heading",
+        "default_value": "Our Mission",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Mission Statement",
+      "uid": "mission_statement",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Organization mission statement",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Story Title",
+      "uid": "story_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Story section heading",
+        "default_value": "Our Story",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Story Content",
+      "uid": "story_content",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Organization story/history",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Impact Stats JSON",
+      "uid": "impact_stats_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Stats as JSON array",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Values Title",
+      "uid": "values_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Values section heading",
+        "default_value": "Our Values",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Values JSON",
+      "uid": "values_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Values as JSON array",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Team Title",
+      "uid": "team_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Team section heading",
+        "default_value": "Meet Our Team",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Team Members JSON",
+      "uid": "team_members_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Team as JSON array",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Title",
+      "uid": "cta_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Call-to-action section heading",
+        "default_value": "Ready to Make an Impact?",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Description",
+      "uid": "cta_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "CTA section text",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Button Text",
+      "uid": "cta_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button label",
+        "default_value": "Explore Opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Button URL",
+      "uid": "cta_button_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button link destination",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

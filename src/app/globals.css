@@ -1,0 +1,245 @@
+/**
+ * ImpactConnect - Global Styles
+ * CSS custom properties and base styles
+ */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--page-bg);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* CSS Custom Properties - Light Theme */
+:root {
+  /* Primary Colors */
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --primary-light: #eef2ff;
+
+  /* Colors */
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-light: #dbeafe;
+  --accent-lighter: #eff6ff;
+  --accent-border: #bfdbfe;
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --text-muted: #9ca3af;
+
+  --virtual-color: #7c3aed;
+  --virtual-bg: #f5f3ff;
+  --virtual-border: #ddd6fe;
+  --virtual-hover: #ede9fe;
+
+  --success-color: #059669;
+  --warning-color: #dc2626;
+  --featured-color: #f59e0b;
+
+  /* Text */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+
+  /* Backgrounds */
+  --page-bg: #f9fafb;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --placeholder-bg: #f3f4f6;
+  --hover-bg: #f3f4f6;
+  --empty-bg: #f9fafb;
+
+  /* Borders */
+  --border-color: #e5e7eb;
+  --border-hover: #d1d5db;
+
+  /* Focus */
+  --focus-color: #3b82f6;
+  --focus-ring: rgba(59, 130, 246, 0.15);
+
+  /* Tags */
+  --tag-bg: #f3f4f6;
+  --tag-color: #4b5563;
+  --cause-bg: #dcfce7;
+  --cause-color: #166534;
+  --contribution-bg: #dbeafe;
+  --contribution-color: #1e40af;
+
+  /* Chips & Pills */
+  --chip-bg: #f3f4f6;
+  --chip-hover: #e5e7eb;
+  --pill-bg: #f9fafb;
+  --pill-hover: #f3f4f6;
+  --button-bg: #f9fafb;
+
+  /* Skeleton */
+  --skeleton-base: #f3f4f6;
+  --skeleton-highlight: #e5e7eb;
+}
+
+/* Dark Theme (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Primary Colors */
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-light: #312e81;
+
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-light: #1e3a5f;
+    --accent-lighter: #172554;
+    --accent-border: #1e40af;
+
+    /* Backgrounds */
+    --bg-primary: #1e293b;
+    --bg-secondary: #0f172a;
+    --text-muted: #6b7280;
+
+    --virtual-color: #a78bfa;
+    --virtual-bg: #2e1065;
+    --virtual-border: #4c1d95;
+    --virtual-hover: #3b0764;
+
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-tertiary: #6b7280;
+
+    --page-bg: #0f172a;
+    --card-bg: #1e293b;
+    --input-bg: #1e293b;
+    --placeholder-bg: #334155;
+    --hover-bg: #334155;
+    --empty-bg: #1e293b;
+
+    --border-color: #334155;
+    --border-hover: #475569;
+
+    --tag-bg: #334155;
+    --tag-color: #d1d5db;
+    --cause-bg: #14532d;
+    --cause-color: #86efac;
+    --contribution-bg: #1e3a5f;
+    --contribution-color: #93c5fd;
+
+    --chip-bg: #334155;
+    --chip-hover: #475569;
+    --pill-bg: #1e293b;
+    --pill-hover: #334155;
+    --button-bg: #1e293b;
+
+    --skeleton-base: #334155;
+    --skeleton-highlight: #475569;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--page-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}

@@ -1,0 +1,349 @@
+/* My Events Page Styles */
+
+.page {
+  min-height: 100vh;
+  background: var(--page-bg, #f9fafb);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.createButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.createButton:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+/* Email Input Section */
+.emailSection {
+  padding: 24px;
+  margin-bottom: 24px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+}
+
+.emailPrompt {
+  margin: 0 0 16px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.emailForm {
+  display: flex;
+  gap: 12px;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  color: var(--text-primary, #111827);
+  background: var(--input-bg, #ffffff);
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.emailInput:focus {
+  border-color: var(--accent-color, #3b82f6);
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.15));
+}
+
+.emailButton {
+  padding: 12px 20px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.emailButton:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+/* Empty State */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+}
+
+.emptyIcon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.emptyIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.emptyTitle {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.emptyText {
+  margin: 0 0 24px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+  max-width: 360px;
+}
+
+.createEventButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.createEventButton:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+/* Event Sections */
+.eventSections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* Event List */
+.eventList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Event Card */
+.eventCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: box-shadow 0.15s ease;
+}
+
+.eventCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eventTitle {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+/* Status Badges */
+.statusBadge {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.pending {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.published {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.rejected {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+/* Card Details */
+.cardDetails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.detailItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.detailItem svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.pendingNote {
+  margin: 0;
+  padding: 12px;
+  font-size: 0.8125rem;
+  color: #92400e;
+  background: #fffbeb;
+  border-radius: 8px;
+}
+
+/* View Button */
+.viewButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-color, #3b82f6);
+  background: var(--accent-light, #eff6ff);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.viewButton:hover {
+  background: var(--accent-color, #3b82f6);
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .createButton {
+    align-self: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .emailForm {
+    flex-direction: column;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cardDetails {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .eventCard {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,218 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/app/my-registrations/my-registrations.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
+/* My Registrations Page Styles */
+
+.my-registrations_page__n_wde {
+  min-height: 100vh;
+  background: var(--page-bg, #f9fafb);
+}
+
+.my-registrations_container__JZmuX {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.my-registrations_loading__PVwoE {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  font-size: 1.125rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Header */
+.my-registrations_header__uCalF {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.my-registrations_title__RgVIR {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+}
+
+.my-registrations_subtitle__3e0xo {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Empty State */
+.my-registrations_emptyState__pUp3y {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+}
+
+.my-registrations_emptyIcon__40bZk {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.my-registrations_emptyIcon__40bZk svg {
+  width: 100%;
+  height: 100%;
+}
+
+.my-registrations_emptyTitle__nUM7n {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.my-registrations_emptyText__4H_RC {
+  margin: 0 0 24px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary, #6b7280);
+  max-width: 320px;
+}
+
+.my-registrations_discoverButton__xc1yM {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-color, #3b82f6);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.my-registrations_discoverButton__xc1yM:hover {
+  background: var(--accent-hover, #2563eb);
+}
+
+/* Registration List */
+.my-registrations_registrationList__UZm_J {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Registration Card */
+.my-registrations_registrationCard__umGvt {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 12px;
+  transition: box-shadow 0.15s ease;
+}
+
+.my-registrations_registrationCard__umGvt:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.my-registrations_cardHeader__Vd9jv {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.my-registrations_eventTitle__A9L8V {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.my-registrations_registeredBadge__I_a8O {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* Card Details */
+.my-registrations_cardDetails__ZESv2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.my-registrations_detailItem__NRI4N {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+.my-registrations_detailItem__NRI4N svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* View Button */
+.my-registrations_viewButton__cGPNR {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-color, #3b82f6);
+  background: var(--accent-light, #eff6ff);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.my-registrations_viewButton__cGPNR:hover {
+  background: var(--accent-color, #3b82f6);
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .my-registrations_container__JZmuX {
+    padding: 20px 16px;
+  }
+
+  .my-registrations_title__RgVIR {
+    font-size: 1.5rem;
+  }
+
+  .my-registrations_cardHeader__Vd9jv {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .my-registrations_cardDetails__ZESv2 {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .my-registrations_registrationCard__umGvt {
+    padding: 16px;
+  }
+}
+

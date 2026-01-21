@@ -1,0 +1,192 @@
+{
+  "title": "Discover Page",
+  "uid": "discover_page",
+  "description": "Opportunities listing page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main page title",
+        "default_value": "Discover Opportunities",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Page Description",
+      "uid": "page_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "SEO meta description",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Subtitle - All Opportunities",
+      "uid": "subtitle_all",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle when showing all opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Search Placeholder",
+      "uid": "search_placeholder",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Placeholder text for search input",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Filters Section Title",
+      "uid": "filters_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for filters sidebar",
+        "default_value": "Filters",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Location Filter Label",
+      "uid": "location_filter_label",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Label for location filter",
+        "default_value": "Location",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Virtual Option Label",
+      "uid": "virtual_label",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Label for virtual/remote option",
+        "default_value": "Virtual / Remote",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Clear Filters Button Text",
+      "uid": "clear_filters_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for clear filters button",
+        "default_value": "Clear All Filters",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Sort Options JSON",
+      "uid": "sort_options_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Sort dropdown options as JSON array. Example: [{\"value\": \"date_asc\", \"label\": \"Date - Earliest\"}]",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Title",
+      "uid": "empty_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title when no results found",
+        "default_value": "No opportunities found",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Message",
+      "uid": "empty_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message when no results found",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Loading Text",
+      "uid": "loading_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text shown while loading",
+        "default_value": "Finding opportunities...",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Info Banner Text",
+      "uid": "info_banner_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Info text when showing all results",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

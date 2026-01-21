@@ -1,0 +1,122 @@
+{
+  "title": "FAQ Page",
+  "uid": "faq_page",
+  "description": "Frequently asked questions page - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main heading",
+        "default_value": "Frequently Asked Questions",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Page Subtitle",
+      "uid": "page_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle under the main heading",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Background Image",
+      "uid": "background_image",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Background image for FAQ content area"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "FAQs JSON",
+      "uid": "faqs_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "FAQ data as JSON array",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Section Title",
+      "uid": "contact_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for contact section at bottom",
+        "default_value": "Still Have Questions?",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Section Description",
+      "uid": "contact_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description text",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Button Text",
+      "uid": "contact_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button label",
+        "default_value": "Contact Us",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Email",
+      "uid": "contact_email",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Email for contact button",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

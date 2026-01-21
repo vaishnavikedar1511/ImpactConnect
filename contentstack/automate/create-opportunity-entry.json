@@ -1,0 +1,21 @@
+{
+  "title": "{{1.body.title}}",
+  "slug": "{{1.body.slug}}",
+  "summary": "{{1.body.summary}}",
+  "description": "{{1.body.description}}",
+  "location_slug": "{{1.body.locationSlug}}",
+  "city": "{{1.body.city}}",
+  "cause_slugs": "{{1.body.causeSlugs}}",
+  "contribution_types": "{{1.body.contributionTypes}}",
+  "start_date": "{{1.body.startDate}}",
+  "end_date": "{{1.body.endDate}}",
+  "start_time": "{{1.body.startTime}}",
+  "end_time": "{{1.body.endTime}}",
+  "is_virtual": "{{1.body.isVirtual}}",
+  "registration_email": "{{1.body.organizerEmail}}",
+  "organizer_slug": "{{1.body.organizerName}}",
+  "status": "upcoming",
+  "registration_type": "form",
+  "registration_label": "Register Now",
+  "keywords": ["user-submitted", "approved"]
+}

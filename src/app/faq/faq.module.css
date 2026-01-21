@@ -1,0 +1,262 @@
+.page {
+  min-height: 100vh;
+  background: var(--page-bg, #f9fafb);
+}
+
+/* Hero Section */
+.hero {
+  padding: 3rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  text-align: center;
+}
+
+.heroTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary, #111827);
+  margin: 0 0 0.75rem;
+}
+
+.heroSubtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary, #6b7280);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Content */
+.content {
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.contentWithBackground {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contentWithBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.contentWithBackground > * {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Categories */
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Background image is now applied to .content section, so no need for categoriesWithBackground */
+
+.category {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.categoryTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.categoryIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.categoryIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--accent-color, #3b82f6);
+}
+
+/* Questions */
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faqItem {
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 1rem;
+}
+
+.question:hover .questionText {
+  color: var(--accent-color, #3b82f6);
+}
+
+.questionText {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  transition: color 0.2s;
+  flex: 1;
+}
+
+.questionOpen .questionText {
+  color: var(--accent-color, #3b82f6);
+}
+
+.chevron {
+  width: 20px;
+  height: 20px;
+  color: var(--text-tertiary, #9ca3af);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+  color: var(--accent-color, #3b82f6);
+}
+
+/* Answer */
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.answerOpen {
+  max-height: 500px;
+}
+
+.answerContent {
+  padding: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #4b5563);
+}
+
+/* Empty */
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary, #6b7280);
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, var(--accent-color, #3b82f6) 0%, #1d4ed8 100%);
+  text-align: center;
+  color: white;
+}
+
+.contactTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+}
+
+.contactDescription {
+  font-size: 1.0625rem;
+  margin: 0 0 1.5rem;
+  opacity: 0.9;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: white;
+  color: var(--accent-color, #3b82f6);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .content {
+    padding: 2rem 1rem;
+  }
+
+  .category {
+    padding: 1.5rem;
+  }
+
+  .categoryTitle {
+    font-size: 1.25rem;
+  }
+
+  .questionText {
+    font-size: 0.9375rem;
+  }
+
+  .contactSection {
+    padding: 2rem 1rem;
+  }
+
+  .contactTitle {
+    font-size: 1.5rem;
+  }
+}

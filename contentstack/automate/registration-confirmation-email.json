@@ -1,0 +1,32 @@
+{
+  "title": "Registration Confirmation Email",
+  "description": "Sends confirmation email when a user registers for an opportunity",
+  "active": true,
+  "throttle": false,
+  "trigger": {
+    "uid": "trigger_1",
+    "type": "contentstack:entry.publish",
+    "config": {
+      "content_types": ["registration"],
+      "environments": ["production"]
+    },
+    "next": ["step_1"]
+  },
+  "steps": [
+    {
+      "uid": "step_1",
+      "type": "sendgrid:send_email",
+      "title": "Send Confirmation Email",
+      "config": {
+        "to": "{{trigger.data.entry.participant_email}}",
+        "from_email": "noreply@impactconnect.com",
+        "from_name": "ImpactConnect",
+        "subject": "Registration Confirmed: {{trigger.data.entry.opportunity_title}}",
+        "content_type": "text/html",
+        "body": "<h1>Registration Confirmed!</h1><p>Hi {{trigger.data.entry.participant_name}},</p><p>You are registered for: <strong>{{trigger.data.entry.opportunity_title}}</strong></p><p><strong>Date:</strong> {{trigger.data.entry.opportunity_date}}</p><p><strong>Time:</strong> {{trigger.data.entry.opportunity_time}}</p><p><strong>Location:</strong> {{trigger.data.entry.opportunity_location}}</p><p><strong>Registration ID:</strong> {{trigger.data.entry.registration_id}}</p><p>Thank you!</p>"
+      },
+      "next": []
+    }
+  ],
+  "step_groups": ["default"]
+}

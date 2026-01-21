@@ -1,0 +1,115 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.message {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.dismissButton {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.dismissButton:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.dismissButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Color Variants */
+.info {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.accent {
+  background: var(--accent-color, #3b82f6);
+  color: white;
+}
+
+.accent .dismissButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .banner {
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+  }
+
+  .content {
+    text-align: left;
+  }
+
+  .message {
+    font-size: 0.85rem;
+  }
+
+  .dismissButton {
+    right: 0.5rem;
+  }
+}

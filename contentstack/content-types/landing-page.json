@@ -1,0 +1,247 @@
+{
+  "title": "Landing Page",
+  "uid": "landing_page",
+  "description": "Homepage/Landing page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Hero Title",
+      "uid": "hero_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main headline (use {highlight} to mark the highlighted word)",
+        "default_value": "Make an {Impact} in Your Community",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Hero Subtitle",
+      "uid": "hero_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subheadline text below the title",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Hero Background Image",
+      "uid": "hero_background_image",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Background image for the hero section"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Primary CTA Text",
+      "uid": "primary_cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for the main call-to-action button",
+        "default_value": "Discover Opportunities",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Primary CTA Link",
+      "uid": "primary_cta_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link for the main CTA button",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Secondary CTA Text",
+      "uid": "secondary_cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for the secondary button",
+        "default_value": "Create an Event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Secondary CTA Link",
+      "uid": "secondary_cta_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link for the secondary button",
+        "default_value": "/create-event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Stats JSON",
+      "uid": "stats_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Hero statistics as JSON array. Example: [{\"number\": \"500+\", \"label\": \"Volunteers\"}]",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "How It Works Title",
+      "uid": "how_it_works_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Section title",
+        "default_value": "How It Works",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Steps JSON",
+      "uid": "steps_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "How it works steps as JSON array. Example: [{\"title\": \"Browse\", \"description\": \"Find opportunities...\"}]",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Causes Section Title",
+      "uid": "causes_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for the causes section",
+        "default_value": "Causes We Support",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Causes Section Background Image",
+      "uid": "causes_background_image",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Background image for the causes section"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Causes JSON",
+      "uid": "causes_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Cause cards as JSON array. Example: [{\"icon\": \"🌱\", \"name\": \"Environment\", \"description\": \"...\", \"slug\": \"environment\"}]",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Bottom CTA Title",
+      "uid": "cta_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for bottom CTA section",
+        "default_value": "Ready to Make a Difference?",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Bottom CTA Description",
+      "uid": "cta_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description for bottom CTA section",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Bottom CTA Button Text",
+      "uid": "cta_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button text",
+        "default_value": "Get Started",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Bottom CTA Button Link",
+      "uid": "cta_button_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button link",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "hero_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

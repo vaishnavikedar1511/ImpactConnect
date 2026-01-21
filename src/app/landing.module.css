@@ -1,0 +1,389 @@
+/* Landing Page Styles */
+
+.landing {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 60px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin-bottom: 48px;
+}
+
+.heroTitle {
+  margin: 0 0 24px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  margin: 0 0 40px;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+.primaryCta svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.primaryCta:hover svg {
+  transform: translateX(4px);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  background: transparent;
+  border: 2px solid #475569;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryCta:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 48px;
+  padding: 32px 48px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* How It Works */
+.howItWorks {
+  padding: 80px 24px;
+  background: #f8fafc;
+}
+
+.sectionTitle {
+  margin: 0 0 48px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #0f172a;
+}
+
+.steps {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
+}
+
+.step {
+  flex: 1;
+  min-width: 0;
+  max-width: none;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  border-radius: 50%;
+}
+
+.stepTitle {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.stepDesc {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Causes */
+.causes {
+  padding: 80px 24px;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.causes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 0;
+}
+
+.causes > * {
+  position: relative;
+  z-index: 1;
+}
+
+.causeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.causeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  background: #f8fafc;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.causeCard:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+}
+
+.causeIcon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.causeIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.causeName {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.causeDesc {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* CTA Section */
+.ctaSection {
+  padding: 80px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+}
+
+.ctaTitle {
+  margin: 0 0 16px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.ctaDesc {
+  margin: 0 0 32px;
+  font-size: 1.125rem;
+  color: #94a3b8;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .steps {
+    gap: 16px;
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .step {
+    padding: 20px;
+  }
+
+  .causeGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .causeCard {
+    padding: 20px 12px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.0625rem;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .stat {
+    flex: 1 1 40%;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .step {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .causeGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .causeCard {
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}

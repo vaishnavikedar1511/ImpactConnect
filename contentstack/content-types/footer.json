@@ -1,0 +1,136 @@
+{
+  "title": "Footer",
+  "uid": "footer",
+  "description": "Site footer - Singleton",
+  "schema": [
+    {
+      "display_name": "Copyright Text",
+      "uid": "copyright_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Copyright notice",
+        "default_value": "© 2026 ImpactConnect. All rights reserved.",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Tagline",
+      "uid": "tagline",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Short tagline or mission statement",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Links JSON",
+      "uid": "links_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Footer links as JSON",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Social Links JSON",
+      "uid": "social_links_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Social links as JSON",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Show Newsletter Signup",
+      "uid": "show_newsletter",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Display newsletter subscription form",
+        "default_value": false
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Newsletter Title",
+      "uid": "newsletter_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Newsletter section heading",
+        "default_value": "Stay Updated",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Newsletter Description",
+      "uid": "newsletter_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Newsletter signup description",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Newsletter Placeholder",
+      "uid": "newsletter_placeholder",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Email input placeholder",
+        "default_value": "Enter your email",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Newsletter Button Text",
+      "uid": "newsletter_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subscribe button text",
+        "default_value": "Subscribe",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "copyright_text",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

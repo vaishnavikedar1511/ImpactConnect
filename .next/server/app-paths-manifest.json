@@ -1,0 +1,7 @@
+{
+  "/opportunities/[slug]/page": "app/opportunities/[slug]/page.js",
+  "/my-registrations/page": "app/my-registrations/page.js",
+  "/page": "app/page.js",
+  "/my-events/page": "app/my-events/page.js",
+  "/create-event/page": "app/create-event/page.js"
+}

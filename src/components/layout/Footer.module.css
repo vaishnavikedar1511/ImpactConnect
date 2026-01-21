@@ -1,0 +1,76 @@
+.footer {
+  background: #1e3a5f;
+  color: #ffffff;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Main Content - Centered */
+.main {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Brand Section */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: #93c5fd;
+}
+
+.tagline {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Hide social links, columns, newsletter by default - simplified footer */
+.socialLinks,
+.columns,
+.newsletter {
+  display: none;
+}
+
+/* Bottom Strip */
+.bottom {
+  background: #152a45;
+  padding: 0.75rem 0;
+  text-align: center;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .main {
+    padding: 1.5rem 0;
+  }
+
+  .tagline {
+    font-size: 0.875rem;
+    padding: 0 1rem;
+  }
+}

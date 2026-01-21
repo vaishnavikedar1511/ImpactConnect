@@ -1,0 +1,163 @@
+{
+  "title": "Error Pages",
+  "uid": "error_pages",
+  "description": "Error page content (404, 500, etc.) - Singleton",
+  "schema": [
+    {
+      "display_name": "404 Title",
+      "uid": "not_found_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for 404 page",
+        "default_value": "Page Not Found",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "404 Message",
+      "uid": "not_found_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message for 404 page",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "404 Image URL",
+      "uid": "not_found_image_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to illustration for 404 page",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "404 Button Text",
+      "uid": "not_found_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button text on 404 page",
+        "default_value": "Go to Homepage",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "404 Button URL",
+      "uid": "not_found_button_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button link on 404 page",
+        "default_value": "/",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Error Title",
+      "uid": "error_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for general error page",
+        "default_value": "Something Went Wrong",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Error Message",
+      "uid": "error_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message for general error page",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Error Image URL",
+      "uid": "error_image_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to illustration for error page",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Error Button Text",
+      "uid": "error_button_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Button text on error page",
+        "default_value": "Try Again",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Show Contact on Error",
+      "uid": "show_contact_on_error",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Show contact info on error pages",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Contact Message",
+      "uid": "contact_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Contact support message",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "not_found_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

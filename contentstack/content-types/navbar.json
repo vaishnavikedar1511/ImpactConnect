@@ -1,0 +1,136 @@
+{
+  "title": "Navbar",
+  "uid": "navbar",
+  "description": "Site navigation - Singleton",
+  "schema": [
+    {
+      "display_name": "Site Name",
+      "uid": "site_name",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Brand name shown in the header",
+        "default_value": "ImpactConnect",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Logo URL",
+      "uid": "logo_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL to site logo image (optional)",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Nav Links JSON",
+      "uid": "nav_links_json",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Navigation links as JSON array",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Button Text",
+      "uid": "cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Primary CTA button label",
+        "default_value": "Create Event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "CTA Button URL",
+      "uid": "cta_url",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Primary CTA button link",
+        "default_value": "/create-event",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Show CTA Button",
+      "uid": "show_cta",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Whether to show the CTA button",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Show User Menu",
+      "uid": "show_user_menu",
+      "data_type": "boolean",
+      "field_metadata": {
+        "description": "Show My Registrations and My Events links",
+        "default_value": true
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "My Registrations Label",
+      "uid": "my_registrations_label",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Label for My Registrations link",
+        "default_value": "My Registrations",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "My Events Label",
+      "uid": "my_events_label",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Label for My Events link",
+        "default_value": "My Events",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "site_name",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

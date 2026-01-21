@@ -1,0 +1,166 @@
+{
+  "title": "My Registrations Page",
+  "uid": "my_registrations_page",
+  "description": "My Registrations page content - Singleton",
+  "schema": [
+    {
+      "display_name": "Page Title",
+      "uid": "page_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Main page heading",
+        "default_value": "My Registrations",
+        "version": 3
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Page Subtitle",
+      "uid": "page_subtitle",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Subtitle below the heading",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Upcoming Section Title",
+      "uid": "upcoming_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for upcoming events section",
+        "default_value": "Upcoming Events",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Upcoming Section Description",
+      "uid": "upcoming_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description for upcoming events",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Past Section Title",
+      "uid": "past_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for past events section",
+        "default_value": "Past Events",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Past Section Description",
+      "uid": "past_description",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Description for past events",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Title",
+      "uid": "empty_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title when no registrations exist",
+        "default_value": "No Registrations Yet",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Empty State Message",
+      "uid": "empty_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message when no registrations exist",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Browse CTA Text",
+      "uid": "browse_cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for browse opportunities button",
+        "default_value": "Browse Opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Browse CTA Link",
+      "uid": "browse_cta_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Link for browse button",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Registration Confirmation Message",
+      "uid": "confirmation_message",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Message shown on registration cards",
+        "multiline": true,
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    }
+  ],
+  "options": {
+    "title": "page_title",
+    "singleton": true,
+    "publishable": true,
+    "is_page": false
+  }
+}

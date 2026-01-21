@@ -1,0 +1,61 @@
+{
+  "title": "Cause",
+  "uid": "cause",
+  "description": "Social impact categories",
+  "schema": [
+    {
+      "display_name": "Name",
+      "uid": "name",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Name of the cause",
+        "_default": true
+      },
+      "mandatory": true,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "URL Slug",
+      "uid": "slug",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL-friendly identifier (e.g., education, environment)"
+      },
+      "mandatory": true,
+      "unique": true,
+      "multiple": false
+    },
+    {
+      "display_name": "Icon",
+      "uid": "icon",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Icon representing this cause"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    },
+    {
+      "display_name": "Color",
+      "uid": "color",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Hex color code (e.g., #4CAF50)"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false
+    }
+  ],
+  "options": {
+    "title": "name",
+    "publishable": true,
+    "is_page": false,
+    "singleton": false,
+    "sub_title": ["slug"],
+    "url_pattern": "/causes/:slug",
+    "url_prefix": "/"
+  }
+}
