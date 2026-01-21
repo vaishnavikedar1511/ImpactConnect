@@ -5,8 +5,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getOpportunities } from '@/lib/contentstack';
-import { personalizeOpportunityOrder, type UserAttributes } from '@/lib/contentstack/personalize';
-import type { OpportunityFilters, OpportunitySortOption, ContributionType, OpportunitySummary } from '@/types';
+import type { OpportunityFilters, OpportunitySortOption, ContributionType } from '@/types';
 
 export async function GET(request: NextRequest) {
   try {
@@ -24,17 +23,6 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get('page') || '1', 10);
     const pageSize = parseInt(searchParams.get('pageSize') || '12', 10);
     const sort = (searchParams.get('sort') as OpportunitySortOption) || 'date_asc';
-    
-    // Parse user attributes for personalization (optional)
-    const userAttributesParam = searchParams.get('userAttributes');
-    let userAttributes: UserAttributes | undefined;
-    if (userAttributesParam) {
-      try {
-        userAttributes = JSON.parse(decodeURIComponent(userAttributesParam));
-      } catch {
-        // Ignore invalid JSON
-      }
-    }
 
     // Build filters
     const filters: OpportunityFilters = {
@@ -78,19 +66,6 @@ export async function GET(request: NextRequest) {
       pageSize: Math.min(pageSize, 50), // Cap at 50 for performance
       sort,
     });
-
-    // Apply personalized ordering if user attributes are provided
-    if (userAttributes && Object.keys(userAttributes).length > 0 && result.opportunities.length > 0) {
-      const personalizedOpportunities = await personalizeOpportunityOrder(
-        result.opportunities,
-        userAttributes
-      );
-      
-      return NextResponse.json({
-        ...result,
-        opportunities: personalizedOpportunities,
-      });
-    }
 
     return NextResponse.json(result);
   } catch (error) {

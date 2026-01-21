@@ -208,7 +208,6 @@ export function RegistrationModal({ opportunity, isOpen, onClose }: Registration
             opportunitySlug: opportunity.slug,
             opportunityDate: opportunity.startDate,
             opportunityLocation: locationDisplay,
-            opportunityCauseSlugs: opportunity.causeSlugs, // Store cause slugs for personalization
             name: formData.name,
             email: formData.email,
           });

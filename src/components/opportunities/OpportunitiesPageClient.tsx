@@ -18,7 +18,6 @@ import type {
 import type { TimeFilter } from '@/lib/utils';
 import type { DiscoverPageContent } from '@/lib/contentstack';
 import { getDateRangeForFilter } from '@/lib/utils';
-import { getUserAttributesFromRegistrations } from '@/lib/contentstack/personalize';
 import { OpportunityFilters as Filters } from './OpportunityFilters';
 import { OpportunityList } from './OpportunityList';
 import { LocationFilter } from './LocationFilter';
@@ -193,19 +192,6 @@ export function OpportunitiesPageClient({
         params.set('status', 'upcoming,ongoing');
       } else {
         params.set('status', 'completed');
-      }
-
-      // Add user attributes for personalization (only for active tab)
-      if (statusFilter === 'active') {
-        try {
-          const userAttributes = getUserAttributesFromRegistrations();
-          if (userAttributes && Object.keys(userAttributes).length > 0) {
-            params.set('userAttributes', encodeURIComponent(JSON.stringify(userAttributes)));
-          }
-        } catch (error) {
-          // Ignore errors getting user attributes
-          console.warn('Failed to get user attributes for personalization:', error);
-        }
       }
 
       const response = await fetch(`/api/opportunities?${params.toString()}`);

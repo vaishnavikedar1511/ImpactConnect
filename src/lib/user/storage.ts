@@ -21,7 +21,6 @@ export interface Registration {
   opportunitySlug: string;
   opportunityDate: string;
   opportunityLocation: string;
-  opportunityCauseSlugs?: string[]; // Cause slugs for personalization
   registeredAt: string;
   name: string;
   email: string;

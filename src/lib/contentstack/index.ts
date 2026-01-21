@@ -133,9 +133,7 @@ export type {
 export {
   getPersonalizedContent,
   getUserAttributesFromClient,
-  getUserAttributesFromRegistrations,
   storeUserAttributes,
   getPersonalizedOpportunities,
-  personalizeOpportunityOrder,
 } from './personalize';
 export type { UserAttributes, PersonalizeOptions } from './personalize';
