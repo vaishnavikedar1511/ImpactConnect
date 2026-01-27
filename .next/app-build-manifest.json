@@ -23,6 +23,12 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
+    "/my-registrations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/my-registrations/page.css",
+      "static/chunks/app/my-registrations/page.js"
+    ],
     "/opportunities/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -34,11 +40,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/opportunities/loading.js"
     ],
-    "/my-registrations/page": [
+    "/opportunities/[slug]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/my-registrations/page.css",
-      "static/chunks/app/my-registrations/page.js"
+      "static/css/app/opportunities/[slug]/page.css",
+      "static/chunks/app/opportunities/[slug]/page.js"
+    ],
+    "/opportunities/[slug]/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/opportunities/[slug]/loading.js"
+    ],
+    "/opportunities/[slug]/not-found": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/opportunities/[slug]/not-found.js"
     ]
   }
 }

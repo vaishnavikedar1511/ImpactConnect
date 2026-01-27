@@ -337,8 +337,8 @@
   padding: 12px 24px;
   font-size: 0.9375rem;
   font-weight: 500;
-  color: var(--accent-color, #3b82f6);
-  background: var(--accent-light, #dbeafe);
+  color: #ffffff; /* White text */
+  background: #a855f7; /* Purple background */
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -346,7 +346,7 @@
 }
 
 .successButton:hover {
-  background: var(--accent-border, #bfdbfe);
+  background: #9333ea; /* Darker purple on hover */
 }
 
 /* Error Alert */

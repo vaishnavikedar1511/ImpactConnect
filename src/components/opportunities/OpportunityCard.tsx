@@ -166,7 +166,6 @@ export function OpportunityCard({
         {/* Organizer */}
         {organizerName && (
           <div className={styles.organizer}>
-            <div className={styles.organizerLogo} aria-hidden="true" />
             <span className={styles.organizerName}>by {organizerName}</span>
           </div>
         )}

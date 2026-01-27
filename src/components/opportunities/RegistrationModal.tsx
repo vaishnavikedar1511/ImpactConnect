@@ -404,7 +404,7 @@ export function RegistrationModal({ opportunity, isOpen, onClose }: Registration
                 {/* Phone */}
                 <div className={styles.formGroup}>
                   <label htmlFor="phone" className={styles.label}>
-                    Phone Number
+                    Phone Number(optional)
                   </label>
                   <input
                     type="tel"
