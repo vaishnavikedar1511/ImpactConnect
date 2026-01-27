@@ -11,16 +11,16 @@
   gap: 12px;
   padding: 14px 18px;
   margin-bottom: 20px;
-  background: var(--info-bg, #eff6ff);
-  border: 1px solid var(--info-border, #bfdbfe);
+  background: var(--info-bg, #faf5ff);
+  border: 1px solid var(--info-border, #d8b4fe);
   border-radius: 10px;
-  color: var(--info-text, #1e40af);
+  color: var(--info-text, #6b21a8);
   font-size: 0.9375rem;
 }
 
 .infoBanner svg {
   flex-shrink: 0;
-  color: var(--info-icon, #3b82f6);
+  color: var(--info-icon, #8b5cf6);
 }
 
 .infoBanner p {
@@ -75,7 +75,7 @@
 }
 
 .statusButtonActive {
-  color: var(--accent-color, #3b82f6);
+  color: var(--accent-color, #8b5cf6);
   background: var(--card-bg, #ffffff);
   font-weight: 600;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -83,7 +83,7 @@
 
 .statusButton:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--focus-ring, rgba(59, 130, 246, 0.15));
+  box-shadow: 0 0 0 2px var(--focus-ring, rgba(139, 92, 246, 0.15));
 }
 
 /* Grid */
@@ -91,6 +91,42 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 24px;
+}
+
+/* Individual card animations - staggered */
+.grid > * {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Stagger delays for first 12 cards */
+.grid > *:nth-child(1) { animation-delay: 0.1s; }
+.grid > *:nth-child(2) { animation-delay: 0.2s; }
+.grid > *:nth-child(3) { animation-delay: 0.3s; }
+.grid > *:nth-child(4) { animation-delay: 0.4s; }
+.grid > *:nth-child(5) { animation-delay: 0.5s; }
+.grid > *:nth-child(6) { animation-delay: 0.6s; }
+.grid > *:nth-child(7) { animation-delay: 0.7s; }
+.grid > *:nth-child(8) { animation-delay: 0.8s; }
+.grid > *:nth-child(9) { animation-delay: 0.9s; }
+.grid > *:nth-child(10) { animation-delay: 1.0s; }
+.grid > *:nth-child(11) { animation-delay: 1.1s; }
+.grid > *:nth-child(12) { animation-delay: 1.2s; }
+
+/* Rest fade in quickly */
+.grid > *:nth-child(n+13) {
+  animation-delay: 1.3s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 640px) {
@@ -120,7 +156,7 @@
   height: 40px;
   margin-bottom: 16px;
   border: 3px solid var(--border-color, #e5e7eb);
-  border-top-color: var(--accent-color, #3b82f6);
+  border-top-color: var(--accent-color, #8b5cf6);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -174,7 +210,7 @@
   font-size: 0.9375rem;
   font-weight: 500;
   color: white;
-  background: var(--accent-color, #3b82f6);
+  background: var(--accent-color, #8b5cf6);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -182,12 +218,12 @@
 }
 
 .emptyButton:hover {
-  background: var(--accent-hover, #2563eb);
+  background: var(--accent-hover, #7c3aed);
 }
 
 .emptyButton:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.3));
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(139, 92, 246, 0.3));
 }
 
 /* Pagination */
@@ -225,7 +261,7 @@
 
 .pageButton:focus {
   outline: none;
-  box-shadow: 0 0 0 3px var(--focus-ring, rgba(59, 130, 246, 0.15));
+  box-shadow: 0 0 0 3px var(--focus-ring, rgba(139, 92, 246, 0.15));
 }
 
 .pageButton:disabled {
@@ -235,12 +271,12 @@
 
 .pageButtonActive {
   color: white;
-  background: var(--accent-color, #3b82f6);
-  border-color: var(--accent-color, #3b82f6);
+  background: var(--accent-color, #8b5cf6);
+  border-color: var(--accent-color, #8b5cf6);
 }
 
 .pageButtonActive:hover {
-  background: var(--accent-hover, #2563eb);
+  background: var(--accent-hover, #7c3aed);
 }
 
 .pageInfo {
@@ -263,22 +299,22 @@
   padding: 14px 28px;
   font-size: 1rem;
   font-weight: 500;
-  color: var(--accent-color, #3b82f6);
-  background: var(--accent-light, #eff6ff);
-  border: 2px solid var(--accent-color, #3b82f6);
+  color: var(--accent-color, #8b5cf6);
+  background: var(--accent-light, #faf5ff);
+  border: 2px solid var(--accent-color, #8b5cf6);
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .loadMoreButton:hover {
-  background: var(--accent-color, #3b82f6);
+  background: var(--accent-color, #8b5cf6);
   color: white;
 }
 
 .loadMoreButton:focus {
   outline: none;
-  box-shadow: 0 0 0 4px var(--focus-ring, rgba(59, 130, 246, 0.2));
+  box-shadow: 0 0 0 4px var(--focus-ring, rgba(139, 92, 246, 0.2));
 }
 
 .loadMoreButton:disabled {

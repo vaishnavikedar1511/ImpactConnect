@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import type { FooterContent } from '@/lib/contentstack';
 import styles from './Footer.module.css';
 
@@ -20,7 +21,17 @@ export function Footer({ content }: FooterProps) {
         <div className={styles.main}>
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-              {content.site_name || 'ImpactConnect'}
+              {content.logo_url ? (
+                <Image
+                  src={content.logo_url}
+                  alt={content.site_name || 'ImpactConnect'}
+                  width={140}
+                  height={35}
+                  className={styles.logoImage}
+                />
+              ) : (
+                <span>{content.site_name}</span>
+              )}
             </Link>
             {content.tagline && (
               <p className={styles.tagline}>{content.tagline}</p>

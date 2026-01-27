@@ -87,4 +87,5 @@ export interface LocationReference {
   uid: string;
   name: string;
   slug: string;
+  type?: string;
 }

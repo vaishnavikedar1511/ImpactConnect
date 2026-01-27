@@ -26,6 +26,7 @@ interface OpportunityListProps {
   showAllMessage?: boolean;
   selectedLocationName?: string | null;
   content?: DiscoverPageContent;
+  causeColorMap?: Map<string, string>;
 }
 
 export function OpportunityList({
@@ -42,6 +43,7 @@ export function OpportunityList({
   showAllMessage = false,
   selectedLocationName = null,
   content,
+  causeColorMap,
 }: OpportunityListProps) {
   const totalPages = Math.ceil(total / pageSize);
   const startItem = (page - 1) * pageSize + 1;
@@ -146,6 +148,7 @@ export function OpportunityList({
             <OpportunityCard
               opportunity={opportunity}
               priority={index < 6}
+              causeColorMap={causeColorMap}
             />
           </div>
         ))}

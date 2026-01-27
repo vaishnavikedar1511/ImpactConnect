@@ -16,6 +16,8 @@ export {
   getCreatedEventsByEmail,
   updateEventStatus,
   clearUserData,
+  getPrimaryCause,
+  getUserCausesByFrequency,
 } from './storage';
 
 export type { Registration, CreatedEvent } from './storage';

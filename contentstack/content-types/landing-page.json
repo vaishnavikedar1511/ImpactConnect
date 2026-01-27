@@ -142,6 +142,87 @@
       "non_localizable": false
     },
     {
+      "display_name": "Event Carousel Section Title",
+      "uid": "event_carousel_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title for the event carousel section",
+        "default_value": "Discover Opportunities Near You",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Carousel Personalized Title",
+      "uid": "event_carousel_personalized_title",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Title shown when carousel displays personalized content based on user registrations",
+        "default_value": "Recommended For You",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Carousel Background Image",
+      "uid": "event_carousel_background_image",
+      "data_type": "file",
+      "field_metadata": {
+        "description": "Optional background image for the event carousel section"
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Carousel Cause Filter",
+      "uid": "event_carousel_cause_filter",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Optional cause slug to filter opportunities (e.g., 'education', 'environment'). Leave empty to show all causes. Use variants to personalize per segment.",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Carousel CTA Button Text",
+      "uid": "event_carousel_cta_text",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "Text for the carousel CTA button (displayed inline with title)",
+        "default_value": "Discover More",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
+      "display_name": "Event Carousel CTA Button Link",
+      "uid": "event_carousel_cta_link",
+      "data_type": "text",
+      "field_metadata": {
+        "description": "URL for the carousel CTA button. Use variants to personalize (e.g., /opportunities?causes=education)",
+        "default_value": "/opportunities",
+        "version": 3
+      },
+      "mandatory": false,
+      "unique": false,
+      "multiple": false,
+      "non_localizable": false
+    },
+    {
       "display_name": "Causes Section Title",
       "uid": "causes_title",
       "data_type": "text",

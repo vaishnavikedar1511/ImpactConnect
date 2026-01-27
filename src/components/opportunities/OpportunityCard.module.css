@@ -7,16 +7,17 @@
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
   transform: translateY(-2px);
 }
 
 .card:focus-within {
-  outline: 2px solid var(--focus-color, #3b82f6);
+  outline: 2px solid var(--focus-color, #8b5cf6);
   outline-offset: 2px;
 }
 
@@ -40,13 +41,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--accent-light, #dbeafe) 0%, var(--accent-lighter, #eff6ff) 100%);
+  background: linear-gradient(135deg, var(--accent-light, #f3e8ff) 0%, var(--accent-lighter, #faf5ff) 100%);
 }
 
 .imagePlaceholder svg {
   width: 48px;
   height: 48px;
-  color: var(--accent-color, #3b82f6);
+  color: var(--accent-color, #8b5cf6);
   opacity: 0.5;
 }
 
@@ -74,7 +75,7 @@
 }
 
 .dateBadge {
-  background: var(--accent-color, #3b82f6);
+  background: var(--accent-color, #8b5cf6);
   color: white;
 }
 
@@ -117,7 +118,7 @@
 }
 
 .titleLink:hover {
-  color: var(--accent-color, #3b82f6);
+  color: var(--accent-color, #8b5cf6);
 }
 
 .summary {
@@ -172,13 +173,23 @@
 }
 
 .causeTag {
-  background: var(--cause-bg, #dcfce7);
-  color: var(--cause-color, #166534);
+  background: var(--cause-bg, #a855f7);
+  color: var(--cause-color, #ffffff);
+  border: 1px solid;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.causeTag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .contributionTag {
-  background: var(--contribution-bg, #dbeafe);
-  color: var(--contribution-color, #1e40af);
+  background: var(--contribution-bg, #f3e8ff);
+  color: var(--contribution-color, #6b21a8);
 }
 
 /* Organizer */

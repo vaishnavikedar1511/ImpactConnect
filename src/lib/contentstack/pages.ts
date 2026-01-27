@@ -53,6 +53,17 @@ export interface LandingPageContent {
   stats_json?: string;
   how_it_works_title?: string;
   steps_json?: string;
+  // Event Carousel fields
+  event_carousel_title?: string;
+  event_carousel_personalized_title?: string;
+  event_carousel_background_image?: {
+    url: string;
+    title?: string;
+  };
+  event_carousel_cause_filter?: string;
+  event_carousel_cta_text?: string;
+  event_carousel_cta_link?: string;
+  // Causes section
   causes_title?: string;
   causes_background_image?: {
     url: string;
@@ -80,6 +91,7 @@ export interface LandingCause {
   name: string;
   description: string;
   slug: string;
+  image_url?: string;
 }
 
 export function parseLandingStats(json?: string): LandingStat[] {
@@ -293,12 +305,18 @@ export const DEFAULT_LANDING_PAGE: LandingPageContent = {
     { title: 'Register', description: 'Sign up for events that match your interests and availability' },
     { title: 'Contribute', description: 'Show up, make an impact, and connect with your community' },
   ]),
+  // Event Carousel defaults
+  event_carousel_title: 'Discover Opportunities Near You',
+  event_carousel_personalized_title: 'Recommended For You',
+  event_carousel_cta_text: 'Discover More',
+  event_carousel_cta_link: '/opportunities',
+  // Causes section
   causes_title: 'Causes We Support',
   causes_json: JSON.stringify([
-    { icon: '📚', name: 'Education', description: 'Teaching, mentoring, skill development', slug: 'education' },
-    { icon: '🌱', name: 'Environment', description: 'Cleanups, tree plantation, conservation', slug: 'environment' },
-    { icon: '🏥', name: 'Healthcare', description: 'Health camps, blood donation, awareness', slug: 'healthcare' },
-    { icon: '🐾', name: 'Animal Welfare', description: 'Shelter support, rescue, care', slug: 'animal-welfare' },
+    { icon: '📚', name: 'Education', description: 'Teaching, mentoring, and educational support programs', slug: 'education', image_url: 'https://images.contentstack.io/v3/assets/blt784cf10994409141/blt676adfb50d750338/69771a41102b974850e69562/pexels-katerina-holmes-5905921.jpg' },
+    { icon: '🌱', name: 'Environment', description: 'Conservation, sustainability, and environmental protection initiatives', slug: 'environment', image_url: 'https://images.contentstack.io/v3/assets/blt784cf10994409141/blt77495582cbcf5c2f/69771a415cb500300b2a97ae/pexels-barnabas-davoti-31615494-9915962.jpg' },
+    { icon: '🏥', name: 'Healthcare', description: 'Healthcare access, blood donation, and medical assistance', slug: 'healthcare', image_url: 'https://images.contentstack.io/v3/assets/blt784cf10994409141/blt9d2f2f700177c411/69771a3f446329e6fa6a4855/pexels-kampus-8441824.jpg' },
+    { icon: '🐾', name: 'Animal Welfare', description: 'Animal rescue, shelter support, and wildlife conservation', slug: 'animal-welfare', image_url: 'https://images.contentstack.io/v3/assets/blt784cf10994409141/blt8afa893aadb4ecfd/69771a3fed209f36897c519f/pexels-aysenuryilmaz-10560152.jpg' },
   ]),
   cta_title: 'Ready to Make a Difference?',
   cta_description: 'Join thousands of volunteers creating positive change every day.',
@@ -446,7 +464,7 @@ export const DEFAULT_CREATE_EVENT_PAGE: CreateEventPageContent = {
 async function getSingletonContent<T>(contentTypeUid: string): Promise<T | null> {
   try {
     // Include assets to get full file field data
-    const result = await getEntries<T>(contentTypeUid, { 
+    const result = await getEntries<T>(contentTypeUid as any, { 
       limit: 1,
       include: ['assets']
     });
@@ -551,6 +569,8 @@ export async function getNavbarContent(): Promise<NavbarContent> {
  * Footer Content Type
  */
 export interface FooterContent {
+  site_name?: string;
+  logo_url?: string;
   copyright_text?: string;
   tagline?: string;
   links_json?: string; // JSON array of {title, links: [{label, url, new_tab?}]}
@@ -851,7 +871,7 @@ export const DEFAULT_FAQ_PAGE: FAQPageContent = {
 export async function getFAQPageContent(): Promise<FAQPageContent> {
   try {
     // Include the background_image field specifically to get full asset data
-    const result = await getEntries<any>('faq_page', { 
+    const result = await getEntries<any>('faq_page' as any, { 
       limit: 1,
       include: ['background_image']
     });

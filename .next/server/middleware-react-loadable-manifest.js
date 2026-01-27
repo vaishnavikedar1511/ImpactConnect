@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"components/opportunities/OpportunitiesPageClient.tsx -> @/lib/contentstack/personalize-service\":{\"id\":\"components/opportunities/OpportunitiesPageClient.tsx -> @/lib/contentstack/personalize-service\",\"files\":[]}}"

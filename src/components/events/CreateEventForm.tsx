@@ -703,35 +703,16 @@ export function CreateEventForm({ content }: CreateEventFormProps) {
                     <label htmlFor="city" className={styles.label}>
                       City
                     </label>
-                    {cities.length > 0 ? (
-                      <select
-                        id="city"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        className={styles.select}
-                        disabled={isLoadingCities}
-                      >
-                        <option value="">
-                          {isLoadingCities ? 'Loading...' : 'Select a city'}
-                        </option>
-                        {cities.map((city, index) => (
-                          <option key={`${city.name}-${index}`} value={city.name}>
-                            {city.name}
-                          </option>
-                        ))}
-                      </select>
-                    ) : (
-                      <input
-                        type="text"
-                        id="city"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        placeholder="Enter city name"
-                        className={styles.input}
-                      />
-                    )}
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      value={formData.city}
+                      onChange={handleInputChange}
+                      placeholder="Enter city name"
+                      className={styles.input}
+                      required
+                    />
                   </div>
 
                   <div className={styles.fieldGroup}>

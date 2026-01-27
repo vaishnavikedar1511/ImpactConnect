@@ -5,10 +5,12 @@
  * Filter controls for opportunity listings
  */
 
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import type { CauseReference } from '@/types';
 import { ContributionType, ContributionTypeLabels } from '@/types';
 import type { TimeFilter } from '@/lib/utils';
+import { getCauseColor } from '@/lib/causeColors';
+import { CustomSelect } from '@/components/ui/CustomSelect';
 import styles from './OpportunityFilters.module.css';
 
 interface FilterState {
@@ -55,22 +57,11 @@ export function OpportunityFilters({
 
   const handleCauseChange = useCallback(
     (causeSlug: string) => {
-      if (!causeSlug) {
-        onFiltersChange({
-          ...filters,
-          causes: [],
-        });
-        return;
-      }
-
-      const current = filters.causes;
-      const updated = current.includes(causeSlug)
-        ? current.filter((c) => c !== causeSlug)
-        : [...current, causeSlug];
-
+      // For dropdown, REPLACE the selection, don't toggle
+      // Empty string means "All Causes" - clear selection
       onFiltersChange({
         ...filters,
-        causes: updated,
+        causes: causeSlug ? [causeSlug] : [], // Single selection or empty
       });
     },
     [filters, onFiltersChange]
@@ -98,6 +89,28 @@ export function OpportunityFilters({
     filters.contributionTypes.length > 0 ||
     filters.causes.length > 0 ||
     filters.timeFilter !== null;
+
+  // Get selected cause colors from Contentstack data
+  const selectedCauseColor = filters.causes[0]
+    ? causes.find(c => c.slug === filters.causes[0])?.color
+    : undefined;
+
+  const selectedCauseColors = getCauseColor(
+    filters.causes[0] || '',
+    selectedCauseColor
+  );
+
+  // Map causes to CustomSelect options with colors
+  const causeOptions = useMemo(() => {
+    return [
+      { value: '', label: 'All Causes' },
+      ...causes.map(cause => ({
+        value: cause.slug,
+        label: cause.name,
+        color: cause.color,
+      })),
+    ];
+  }, [causes]);
 
   return (
     <div
@@ -136,19 +149,16 @@ export function OpportunityFilters({
         <label htmlFor="cause-select" className={styles.filterLabel}>
           Cause
         </label>
-        <select
+        <CustomSelect
           id="cause-select"
-          className={styles.select}
           value={filters.causes[0] || ''}
-          onChange={(e) => handleCauseChange(e.target.value)}
-        >
-          <option value="">All Causes</option>
-          {causes.map((cause) => (
-            <option key={cause.uid} value={cause.slug}>
-              {cause.name}
-            </option>
-          ))}
-        </select>
+          options={causeOptions}
+          onChange={handleCauseChange}
+          placeholder="All Causes"
+          backgroundColor={selectedCauseColors.bg}
+          textColor={selectedCauseColors.text}
+          borderColor={filters.causes[0] ? selectedCauseColors.border : '#a855f7'}
+        />
       </div>
 
       {/* Time Filter */}

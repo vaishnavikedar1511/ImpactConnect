@@ -39,45 +39,6 @@
       "static/chunks/main-app.js",
       "static/css/app/my-registrations/page.css",
       "static/chunks/app/my-registrations/page.js"
-    ],
-    "/my-events/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/my-events/page.css",
-      "static/chunks/app/my-events/page.js"
-    ],
-    "/opportunities/[slug]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/opportunities/[slug]/page.css",
-      "static/chunks/app/opportunities/[slug]/page.js"
-    ],
-    "/opportunities/[slug]/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/opportunities/[slug]/loading.js"
-    ],
-    "/opportunities/[slug]/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/opportunities/[slug]/not-found.js"
-    ],
-    "/create-event/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/create-event/page.css",
-      "static/chunks/app/create-event/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/faq/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/faq/page.css",
-      "static/chunks/app/faq/page.js"
     ]
   }
 }

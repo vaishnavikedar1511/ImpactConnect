@@ -10,6 +10,7 @@ import type {
   OpportunityListResponse,
   OpportunitySortOption,
 } from '@/types';
+import { OpportunityStatus } from '@/types';
 import { ContentTypes } from './config';
 import { getEntries, getEntryByUid, getEntryByField, getEntryCount } from './client';
 import { transformOpportunity, transformOpportunitySummary } from './transformers';
@@ -163,8 +164,8 @@ export async function getOpportunities(
   // Build basic query (non-reference filters)
   // For completed filter, we need to fetch all opportunities (not just status="completed")
   // so we can filter by date. We'll remove status filter temporarily.
-  const isCompletedFilter = filters.status && filters.status.length === 1 && filters.status[0] === 'completed';
-  const isActiveFilter = filters.status && (filters.status.includes('upcoming') || filters.status.includes('ongoing'));
+  const isCompletedFilter = filters.status && filters.status.length === 1 && filters.status[0] === OpportunityStatus.COMPLETED;
+  const isActiveFilter = filters.status && (filters.status.includes(OpportunityStatus.UPCOMING) || filters.status.includes(OpportunityStatus.ONGOING));
   const needsDateFiltering = isCompletedFilter || isActiveFilter;
   
   const queryFilters = { ...filters };
@@ -206,15 +207,15 @@ export async function getOpportunities(
   // For "completed" filter: show opportunities with status="completed" OR past dates
   // For "active" filter: show opportunities with status="upcoming"/"ongoing" AND exclude past dates
   if (filters.status && filters.status.length > 0) {
-    const isCompletedFilter = filters.status.length === 1 && filters.status[0] === 'completed';
-    const isActiveFilter = filters.status.includes('upcoming') || filters.status.includes('ongoing');
+    const isCompletedFilter = filters.status.length === 1 && filters.status[0] === OpportunityStatus.COMPLETED;
+    const isActiveFilter = filters.status.includes(OpportunityStatus.UPCOMING) || filters.status.includes(OpportunityStatus.ONGOING);
     
     if (isCompletedFilter) {
       // For completed: show status="completed" OR past-dated opportunities
       opportunities = opportunities.filter((opp) => {
         const eventDate = opp.endDate || opp.startDate;
         const hasPastDate = eventDate ? isPast(eventDate) : false;
-        return opp.status === 'completed' || hasPastDate;
+        return opp.status === OpportunityStatus.COMPLETED || hasPastDate;
       });
     } else if (isActiveFilter) {
       // For active: exclude past-dated opportunities (status filter already applied in query)
@@ -292,7 +293,7 @@ export async function getFeaturedOpportunities(
 ): Promise<OpportunitySummary[]> {
   const query = {
     is_featured: true,
-    status: 'upcoming',
+    status: OpportunityStatus.UPCOMING,
   };
 
   const result = await getEntries<Record<string, unknown>>(ContentTypes.OPPORTUNITY, {
@@ -317,7 +318,7 @@ export async function getUpcomingOpportunities(
   
   const query = {
     $and: [
-      { status: 'upcoming' },
+      { status: OpportunityStatus.UPCOMING },
       { start_date: { $gte: today } },
     ],
   };
@@ -347,7 +348,7 @@ export async function getOpportunitiesByOrganizer(
     query: {
       $and: [
         { organizer_name: organizerName },
-        options.includeCompleted ? {} : { status: { $in: ['upcoming', 'ongoing'] } },
+        options.includeCompleted ? {} : { status: { $in: [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING] } },
       ].filter(obj => Object.keys(obj).length > 0),
     },
     limit,
@@ -368,7 +369,7 @@ export async function getOpportunitiesByCause(
   limit = 12
 ): Promise<OpportunitySummary[]> {
   const result = await getEntries<Record<string, unknown>>(ContentTypes.OPPORTUNITY, {
-    query: { status: { $in: ['upcoming', 'ongoing'] } },
+    query: { status: { $in: [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING] } },
     limit: MAX_FETCH_LIMIT,
     orderBy: 'start_date',
     orderDirection: 'asc',
@@ -392,7 +393,7 @@ export async function getOpportunitiesByCity(
   const result = await getEntries<Record<string, unknown>>(ContentTypes.OPPORTUNITY, {
     query: { 
       $and: [
-        { status: { $in: ['upcoming', 'ongoing'] } },
+        { status: { $in: [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING] } },
         { city: city },
       ],
     },

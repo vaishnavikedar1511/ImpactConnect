@@ -40,6 +40,7 @@ interface OpportunitiesPageClientProps {
   locations: LocationReference[];
   initialLocation: string | null;
   initialIsVirtual: boolean;
+  initialCauses?: string[];
   hasActiveFilters: boolean;
   content: DiscoverPageContent;
 }
@@ -55,6 +56,7 @@ export function OpportunitiesPageClient({
   locations,
   initialLocation,
   initialIsVirtual,
+  initialCauses = [],
   hasActiveFilters,
   content,
 }: OpportunitiesPageClientProps) {
@@ -79,7 +81,7 @@ export function OpportunitiesPageClient({
 
   const [filters, setFilters] = useState<FilterState>({
     contributionTypes: [],
-    causes: [],
+    causes: initialCauses,
     timeFilter: null,
   });
 
@@ -90,6 +92,18 @@ export function OpportunitiesPageClient({
     }, 300);
     return () => clearTimeout(timer);
   }, [searchQuery]);
+
+  // Create cause color map from Contentstack data
+  const causeColorMap = useMemo(() => {
+    const map = new Map<string, string>();
+    causes.forEach(cause => {
+      const causeWithColor = cause as { slug: string; color?: string };
+      if (causeWithColor.color) {
+        map.set(causeWithColor.slug, causeWithColor.color);
+      }
+    });
+    return map;
+  }, [causes]);
 
   // Filter opportunities based on search query (client-side)
   const filteredOpportunities = useMemo(() => {
@@ -231,13 +245,45 @@ export function OpportunitiesPageClient({
 
   // Handle location selection
   const handleLocationSelect = useCallback(
-    (locationSlug: string | null, virtual: boolean = false) => {
+    async (locationSlug: string | null, virtual: boolean = false) => {
       setSelectedLocation(locationSlug);
       setIsVirtual(virtual);
       setPage(1);
       updateUrl(locationSlug, virtual, filters, 1, statusFilter);
+      
+      // Trigger personalization when city is selected
+      if (locationSlug && !virtual) {
+        try {
+          // Import personalizeService dynamically to avoid SSR issues
+          const { personalizeService } = await import('@/lib/contentstack/personalize-service');
+          
+          // Get the actual city name from location slug
+          const location = locations.find(l => l.slug === locationSlug);
+          const cityName = location?.name?.split(',')[0]?.toLowerCase().trim() || locationSlug;
+          
+          console.log('🏙️ City selected for personalization:', cityName);
+          
+          // Store city in localStorage for AnnouncementBanner to retrieve
+          localStorage.setItem('userCity', cityName);
+          
+          // Set city attribute in Personalize SDK
+          await personalizeService.setUserAttributes({
+            city: cityName,
+          });
+          
+          console.log('✅ Personalization triggered for city:', cityName);
+          
+          // Get variant to verify personalization worked
+          const variantAliases = personalizeService.getVariantAliases();
+          console.log('🏷️ Variant aliases after city selection:', variantAliases);
+          
+        } catch (error) {
+          console.error('❌ Failed to trigger personalization:', error);
+          // Don't block the UI if personalization fails
+        }
+      }
     },
-    [filters, statusFilter, updateUrl]
+    [filters, statusFilter, updateUrl, locations]
   );
 
   // Handle filter changes
@@ -453,6 +499,7 @@ export function OpportunitiesPageClient({
               onStatusFilterChange={handleStatusFilterChange}
               onPageChange={handlePageChange}
               onClearFilters={handleClearFilters}
+              causeColorMap={causeColorMap}
               showAllMessage={!hasAnyFilters}
               selectedLocationName={getSelectedLocationName()}
               content={content}

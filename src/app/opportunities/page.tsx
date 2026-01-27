@@ -9,13 +9,14 @@
 import { Suspense } from 'react';
 import {
   getOpportunities,
-  getCauseReferences,
   getDiscoverPageContent,
 } from '@/lib/contentstack';
+import { getAllCauses } from '@/lib/contentstack/taxonomies';
 import { OpportunitiesPageClient } from '@/components/opportunities/OpportunitiesPageClient';
 import { OpportunityListSkeleton } from '@/components/opportunities';
 import type { Metadata } from 'next';
-import type { LocationReference } from '@/types';
+import type { LocationReference, CauseReference } from '@/types';
+import { OpportunityStatus } from '@/types';
 
 export const metadata: Metadata = {
   title: 'Discover Opportunities | ImpactConnect',
@@ -78,6 +79,41 @@ function extractLocationsFromOpportunities(opportunities: Array<{
   );
 }
 
+/**
+ * Extract unique causes from opportunity entries
+ * Uses cause slugs from opportunities to build dropdown options
+ */
+function extractCausesFromOpportunities(opportunities: Array<{
+  causeSlugs?: string[];
+}>): CauseReference[] {
+  const causeMap = new Map<string, CauseReference>();
+
+  opportunities.forEach((opp) => {
+    if (opp.causeSlugs && opp.causeSlugs.length > 0) {
+      opp.causeSlugs.forEach((slug) => {
+        if (!causeMap.has(slug)) {
+          // Convert slug to display name (e.g., "animal-welfare" -> "Animal Welfare")
+          const name = slug
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+          
+          causeMap.set(slug, {
+            uid: slug, // Use slug as UID since we don't have real UID from opportunities
+            name: name,
+            slug: slug,
+          });
+        }
+      });
+    }
+  });
+
+  // Sort alphabetically by name
+  return Array.from(causeMap.values()).sort((a, b) => 
+    a.name.localeCompare(b.name)
+  );
+}
+
 async function OpportunitiesContent({ searchParams }: PageProps) {
   const params = await searchParams;
   const page = parseInt(params.page || '1', 10);
@@ -88,7 +124,7 @@ async function OpportunitiesContent({ searchParams }: PageProps) {
   // Build filters from search params (all optional)
   const filters: Parameters<typeof getOpportunities>[0] = {
     // Set status based on filter
-    status: statusFilter === 'active' ? ['upcoming', 'ongoing'] : ['completed'],
+    status: statusFilter === 'active' ? [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING] : [OpportunityStatus.COMPLETED],
   };
 
   // Location filter (optional) - match by city slug
@@ -103,7 +139,7 @@ async function OpportunitiesContent({ searchParams }: PageProps) {
 
   // Contribution types filter (optional)
   if (params.types) {
-    filters.contributionTypes = params.types.split(',') as Parameters<typeof getOpportunities>[0]['contributionTypes'];
+    filters.contributionTypes = params.types.split(',') as any;
   }
 
   // Causes filter (optional)
@@ -128,9 +164,9 @@ async function OpportunitiesContent({ searchParams }: PageProps) {
       pageSize: PAGE_SIZE,
       sort: 'date_asc', // Always sort by date ascending
     }),
-    getCauseReferences(),
+    getAllCauses(),
     // Fetch all opportunities to extract locations (with minimal filters)
-    getOpportunities({ status: ['upcoming', 'ongoing'] }, { page: 1, pageSize: 100 }),
+    getOpportunities({ status: [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING] }, { page: 1, pageSize: 100 }),
     // Fetch page content from Contentstack
     getDiscoverPageContent(),
   ]);
@@ -143,6 +179,21 @@ async function OpportunitiesContent({ searchParams }: PageProps) {
       country: opp.country,
     }))
   );
+
+  // Extract causes from actual opportunities
+  const causesFromOpportunities = extractCausesFromOpportunities(
+    allOpportunitiesForLocations.opportunities
+  );
+
+  // Merge Contentstack causes with extracted causes
+  // Prioritize Contentstack causes (they have proper names/icons)
+  // Add any missing causes from opportunities
+  const allCauses = [
+    ...causesResult,
+    ...causesFromOpportunities.filter(
+      c => !causesResult.some(cs => cs.slug === c.slug)
+    )
+  ];
 
   // Check if any filters are active
   const hasActiveFilters = !!(
@@ -162,10 +213,11 @@ async function OpportunitiesContent({ searchParams }: PageProps) {
       pageSize={PAGE_SIZE}
       initialHasMore={opportunitiesResult.hasMore}
       initialStatusFilter={statusFilter}
-      causes={causesResult}
+      causes={allCauses}
       locations={locations}
       initialLocation={params.location || null}
       initialIsVirtual={params.virtual === 'true'}
+      initialCauses={params.causes ? params.causes.split(',') : []}
       hasActiveFilters={hasActiveFilters}
       content={pageContent}
     />

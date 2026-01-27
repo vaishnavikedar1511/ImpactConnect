@@ -22,17 +22,20 @@ export function Header({ content }: HeaderProps) {
     <header className={styles.header}>
       <nav className={styles.nav}>
         <Link href="/" className={styles.logo}>
+          <div className={styles.logoWrapper}>
           {content.logo_url ? (
             <Image
               src={content.logo_url}
               alt={content.site_name}
-              width={140}
-              height={32}
+                width={50}
+                height={50}
               className={styles.logoImage}
             />
           ) : (
-            content.site_name
+              <span className={styles.logoPlaceholder}>IC</span>
           )}
+            <span className={styles.brandText}>ImpactConnect</span>
+          </div>
         </Link>
 
         {/* Mobile Menu Button */}

@@ -13,7 +13,9 @@ export interface Cause {
   uid: string;
   name: string;
   slug: string;
+  description?: string;
   icon?: ImageAsset;
+  image?: ImageAsset;
   color?: string;
 }
 
@@ -24,6 +26,7 @@ export interface CauseReference {
   uid: string;
   name: string;
   slug: string;
+  color?: string;
 }
 
 /**

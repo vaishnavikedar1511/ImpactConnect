@@ -9,7 +9,9 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import type { Opportunity } from '@/types';
 import { formatDisplayDate } from '@/lib/utils';
-import { addRegistration } from '@/lib/user';
+import { addRegistration, getPrimaryCause } from '@/lib/user';
+import { personalizeService } from '@/lib/contentstack/personalize-service';
+import { QuickSubscribe } from './QuickSubscribe';
 import styles from './RegistrationModal.module.css';
 
 interface RegistrationModalProps {
@@ -208,9 +210,17 @@ export function RegistrationModal({ opportunity, isOpen, onClose }: Registration
             opportunitySlug: opportunity.slug,
             opportunityDate: opportunity.startDate,
             opportunityLocation: locationDisplay,
+            causeSlugs: opportunity.causeSlugs, // Include causes for personalization
             name: formData.name,
             email: formData.email,
           });
+          
+          // Update Personalize SDK with new primary cause
+          const primaryCause = getPrimaryCause();
+          if (primaryCause) {
+            console.log('[RegistrationModal] Updating Personalize SDK with primary cause:', primaryCause);
+            await personalizeService.setUserAttributes({ primaryCause });
+          }
         } catch (e) {
           console.warn('Could not save registration to localStorage:', e);
         }
@@ -294,6 +304,13 @@ export function RegistrationModal({ opportunity, isOpen, onClose }: Registration
                 Your registration for <strong>{opportunity.title}</strong> has been submitted.
                 The organizer will contact you with more details.
               </p>
+
+              {/* Newsletter Subscription */}
+              <QuickSubscribe 
+                prefillEmail={formData.email}
+                prefillCity={opportunity.city?.toLowerCase().replace(/\s+/g, '-') || ''}
+              />
+
               <button
                 type="button"
                 className={styles.successButton}

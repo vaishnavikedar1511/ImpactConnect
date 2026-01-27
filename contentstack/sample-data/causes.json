@@ -18,8 +18,8 @@
     },
     {
       "uid": "cause_health",
-      "name": "Health",
-      "slug": "health",
+      "name": "Healthcare",
+      "slug": "healthcare",
       "description": "Healthcare access, blood donation, and medical assistance",
       "color": "#ef4444",
       "display_order": 3

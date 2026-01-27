@@ -21,6 +21,7 @@ export interface Registration {
   opportunitySlug: string;
   opportunityDate: string;
   opportunityLocation: string;
+  causeSlugs?: string[]; // Causes associated with this opportunity
   registeredAt: string;
   name: string;
   email: string;
@@ -206,4 +207,64 @@ export function clearUserData(): void {
   Object.values(STORAGE_KEYS).forEach(key => {
     localStorage.removeItem(key);
   });
+}
+
+/**
+ * Get primary cause from user's most recent registration
+ * Returns the first cause from the most recently registered opportunity
+ * 
+ * @param email - User email (optional, uses current user if not provided)
+ * @returns Primary cause slug or null if no registrations
+ */
+export function getPrimaryCause(email?: string): string | null {
+  const registrations = email ? getRegistrationsByEmail(email) : getRegistrations();
+  
+  if (registrations.length === 0) {
+    return null;
+  }
+  
+  // Sort by registeredAt timestamp (most recent first)
+  const sortedRegistrations = [...registrations].sort((a, b) => {
+    return new Date(b.registeredAt).getTime() - new Date(a.registeredAt).getTime();
+  });
+  
+  // Get the most recent registration
+  const mostRecentRegistration = sortedRegistrations[0];
+  
+  // Return the first cause from that registration
+  if (mostRecentRegistration.causeSlugs && mostRecentRegistration.causeSlugs.length > 0) {
+    return mostRecentRegistration.causeSlugs[0];
+  }
+  
+  return null;
+}
+
+/**
+ * Get all causes user has registered for, sorted by frequency
+ * 
+ * @param email - User email (optional, uses current user if not provided)
+ * @returns Array of cause slugs sorted by registration count (descending)
+ */
+export function getUserCausesByFrequency(email?: string): Array<{ causeSlug: string; count: number }> {
+  const registrations = email ? getRegistrationsByEmail(email) : getRegistrations();
+  
+  if (registrations.length === 0) {
+    return [];
+  }
+  
+  // Count occurrences of each cause
+  const causeCounts: Record<string, number> = {};
+  
+  registrations.forEach(reg => {
+    if (reg.causeSlugs && reg.causeSlugs.length > 0) {
+      reg.causeSlugs.forEach(causeSlug => {
+        causeCounts[causeSlug] = (causeCounts[causeSlug] || 0) + 1;
+      });
+    }
+  });
+  
+  // Convert to array and sort by count
+  return Object.entries(causeCounts)
+    .map(([causeSlug, count]) => ({ causeSlug, count }))
+    .sort((a, b) => b.count - a.count);
 }

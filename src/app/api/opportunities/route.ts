@@ -6,6 +6,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getOpportunities } from '@/lib/contentstack';
 import type { OpportunityFilters, OpportunitySortOption, ContributionType } from '@/types';
+import { OpportunityStatus } from '@/types';
 
 export async function GET(request: NextRequest) {
   try {
@@ -29,7 +30,7 @@ export async function GET(request: NextRequest) {
       // Default to only showing active opportunities
       status: status 
         ? status.split(',') as OpportunityFilters['status']
-        : ['upcoming', 'ongoing'],
+        : [OpportunityStatus.UPCOMING, OpportunityStatus.ONGOING],
     };
 
     if (location) {

@@ -1,7 +1,9 @@
 {
-  "/opportunities/[slug]/page": "app/opportunities/[slug]/page.js",
-  "/my-registrations/page": "app/my-registrations/page.js",
+  "/api/personalized-landing/route": "app/api/personalized-landing/route.js",
+  "/api/causes/route": "app/api/causes/route.js",
+  "/api/carousel-events/route": "app/api/carousel-events/route.js",
   "/page": "app/page.js",
-  "/my-events/page": "app/my-events/page.js",
-  "/create-event/page": "app/create-event/page.js"
+  "/api/opportunities/route": "app/api/opportunities/route.js",
+  "/opportunities/page": "app/opportunities/page.js",
+  "/my-registrations/page": "app/my-registrations/page.js"
 }

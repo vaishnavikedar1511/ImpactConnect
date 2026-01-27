@@ -60,56 +60,66 @@ h6 {
 /* CSS Custom Properties - Light Theme */
 :root {
   /* Primary Colors */
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --primary-light: #eef2ff;
+  /* ===== BLACK + PURPLE THEME ===== */
+  
+  /* Background Colors */
+  --page-bg: #000000;
+  --card-bg: #1a1a1a;
+  --section-bg: #0a0a0a;
+  --input-bg: #1a1a1a;
+  --hover-bg: #1f1f1f;
+  --placeholder-bg: #262626;
+  --empty-bg: #0a0a0a;
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8;
+  --text-tertiary: #808080;
+  --text-muted: #808080;
 
-  /* Colors */
-  --accent-color: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-light: #dbeafe;
-  --accent-lighter: #eff6ff;
-  --accent-border: #bfdbfe;
+  /* Purple Accent Colors */
+  --primary: #a855f7;
+  --primary-dark: #9333ea;
+  --primary-light: #c084fc;
+  --accent-color: #a855f7;
+  --accent-hover: #9333ea;
+  --accent-light: #c084fc;
+  --accent-lighter: #e9d5ff;
+  --accent-dark: #7e22ce;
+  --accent-border: #a855f7;
 
-  /* Backgrounds */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --text-muted: #9ca3af;
+  /* Purple Glow Effects */
+  --purple-glow: rgba(168, 85, 247, 0.3);
+  --purple-glow-strong: rgba(168, 85, 247, 0.5);
+  
+  /* Border Colors */
+  --border-color: #333333;
+  --border-light: #262626;
+  --border-hover: #a855f7;
+  --focus-color: #a855f7;
+  
+  /* Interactive States */
+  --focus-ring: rgba(168, 85, 247, 0.4);
+  
+  /* Virtual Event Styles */
+  --virtual-color: #a855f7;
+  --virtual-bg: #1a0033;
+  --virtual-border: #7e22ce;
+  --virtual-hover: #2d0052;
 
-  --virtual-color: #7c3aed;
-  --virtual-bg: #f5f3ff;
-  --virtual-border: #ddd6fe;
-  --virtual-hover: #ede9fe;
-
-  --success-color: #059669;
-  --warning-color: #dc2626;
+  /* Status Colors */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --info-color: #a855f7;
   --featured-color: #f59e0b;
 
-  /* Text */
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-tertiary: #9ca3af;
-
-  /* Backgrounds */
-  --page-bg: #f9fafb;
-  --card-bg: #ffffff;
-  --input-bg: #ffffff;
-  --placeholder-bg: #f3f4f6;
-  --hover-bg: #f3f4f6;
-  --empty-bg: #f9fafb;
-
-  /* Borders */
-  --border-color: #e5e7eb;
-  --border-hover: #d1d5db;
-
-  /* Focus */
-  --focus-color: #3b82f6;
-  --focus-ring: rgba(59, 130, 246, 0.15);
-
   /* Tags */
-  --tag-bg: #f3f4f6;
-  --tag-color: #4b5563;
-  --cause-bg: #dcfce7;
+  --tag-bg: #1a1a1a;
+  --tag-color: #b8b8b8;
+  --cause-bg: #1a0033;
   --cause-color: #166534;
   --contribution-bg: #dbeafe;
   --contribution-color: #1e40af;
@@ -247,6 +257,144 @@ a:hover {
   background: var(--text-tertiary);
 }
 
+/* ========================================
+   Global Smoke Effect - Dynamic Cause Colors
+   ======================================== */
+
+/* CSS Variable for Dynamic Smoke Color */
+:root {
+  --global-smoke-color: #a855f7; /* Default purple */
+}
+
+/* Global Smoke Effect - Flows from Left Side */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  left: -30%;
+  right: 30%;
+  background: 
+    radial-gradient(ellipse 50% 60% at 0% 30%, var(--global-smoke-color) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 5% 60%, var(--global-smoke-color) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 10% 45%, var(--global-smoke-color) 0%, transparent 50%),
+    radial-gradient(circle at 0% 75%, var(--global-smoke-color) 0%, transparent 45%);
+  opacity: 0.12;
+  filter: blur(70px) contrast(1.4);
+  animation: globalSmokeFlow 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: screen;
+}
+
+@keyframes globalSmokeFlow {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(40px, -20px) scale(1.08); }
+  50% { transform: translate(20px, 30px) scale(1.12); }
+  75% { transform: translate(60px, 10px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/effects/CauseEffect.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************/
+/* Global Cause Effect - Smoky Gradient Animation */
+
+.CauseEffect_causeEffect__Zv3LW {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Primary smoke layer - flowing from LEFT side */
+.CauseEffect_causeEffect__Zv3LW::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -30%;
+  right: 30%;
+  background: 
+    /* Radial gradients positioned on left side, fading towards right */
+    radial-gradient(ellipse 50% 60% at 0% 30%, var(--smoke-color, #a855f7) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 55% at 5% 60%, var(--smoke-color, #a855f7) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 10% 45%, var(--smoke-color, #a855f7) 0%, transparent 50%),
+    radial-gradient(circle at 0% 75%, var(--smoke-color, #a855f7) 0%, transparent 45%),
+    radial-gradient(ellipse 50% 40% at 15% 20%, var(--smoke-color, #a855f7) 0%, transparent 58%);
+  opacity: 0.45;
+  filter: blur(70px) contrast(1.6);
+  animation: CauseEffect_smokeFlowFromLeft__JU18u 18s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Secondary layer - mid-section spread */
+.CauseEffect_causeEffect__Zv3LW::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -20%;
+  right: 40%;
+  background: 
+    radial-gradient(ellipse 45% 50% at 10% 40%, var(--smoke-color, #a855f7) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 55% at 20% 65%, var(--smoke-color, #a855f7) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, var(--smoke-color, #a855f7) 0%, transparent 45%),
+    radial-gradient(ellipse 35% 45% at 25% 25%, var(--smoke-color, #a855f7) 0%, transparent 48%);
+  opacity: 0.35;
+  filter: blur(85px) contrast(1.4);
+  animation: CauseEffect_smokeFlowFromLeft2__804ex 22s ease-in-out infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Directional animation - flowing from left to right */
+@keyframes CauseEffect_smokeFlowFromLeft__JU18u {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -25px) scale(1.15) rotate(6deg);
+  }
+  50% {
+    transform: translate(60px, 20px) scale(1.25) rotate(-8deg);
+  }
+  75% {
+    transform: translate(40px, -15px) scale(1.1) rotate(10deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+/* Secondary directional animation - slower rightward flow */
+@keyframes CauseEffect_smokeFlowFromLeft2__804ex {
+  0% {
+    transform: translate(0, 0) scale(1.05) rotate(0deg);
+  }
+  30% {
+    transform: translate(45px, 30px) scale(1.2) rotate(-12deg);
+  }
+  60% {
+    transform: translate(70px, -20px) scale(1.25) rotate(8deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.05) rotate(0deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .CauseEffect_causeEffect__Zv3LW::before {
+    left: -40%;
+    opacity: 0.35;
+  }
+  
+  .CauseEffect_causeEffect__Zv3LW::after {
+    left: -30%;
+    opacity: 0.25;
+  }
+}
+
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/layout/AnnouncementBanner.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************/
@@ -370,15 +518,27 @@ a:hover {
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./src/components/layout/Footer.module.css ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************/
 .Footer_footer__eNA9m {
-  background: #1e3a5f;
+  background: linear-gradient(135deg, #1a0033 0%, #0a0a0a 100%);
   color: #ffffff;
   margin-top: auto;
+  border-top: 1px solid rgba(168, 85, 247, 0.3);
+  position: relative;
+}
+
+.Footer_footer__eNA9m::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.15) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .Footer_container__IkLXC {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 /* Main Content - Centered */
@@ -400,14 +560,16 @@ a:hover {
   font-weight: 700;
   color: #ffffff;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .Footer_logo__8uCHD:hover {
-  color: #93c5fd;
+  color: #c084fc;
+  text-shadow: 0 0 20px rgba(168, 85, 247, 0.6);
 }
 
 .Footer_tagline__WuViG {
-  color: rgba(255, 255, 255, 0.8);
+  color: #b8b8b8;
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
@@ -423,13 +585,14 @@ a:hover {
 
 /* Bottom Strip */
 .Footer_bottom__ch0uR {
-  background: #152a45;
+  background: #000000;
   padding: 0.75rem 0;
   text-align: center;
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .Footer_copyright__vFlrA {
-  color: rgba(255, 255, 255, 0.6);
+  color: #808080;
   font-size: 0.8rem;
   margin: 0;
 }
@@ -471,21 +634,58 @@ a:hover {
 .Header_logo__e5KhT {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent-color, #3b82f6);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.Header_logo__e5KhT:hover {
+  opacity: 0.85;
+}
+
+/* Logo Wrapper */
+.Header_logoWrapper__4y7vX {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.Header_logoPlaceholder__5POWk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Brand Text - PURPLE */
+.Header_brandText__ICtYj {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.Header_logoImage__qjzBq {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .Header_logoIcon__VF71g {
   font-size: 1.75rem;
-}
-
-.Header_logoImage__qjzBq {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
 }
 
 .Header_navIcon__Kqvtw {
@@ -634,6 +834,28 @@ a:hover {
 @media (max-width: 480px) {
   .Header_logo__e5KhT {
     font-size: 1.25rem;
+  }
+
+  /* Hide brand text on mobile, show only logo */
+  .Header_brandText__ICtYj {
+    display: none;
+  }
+  
+  .Header_logoWrapper__4y7vX {
+    gap: 0;
+  }
+  
+  .Header_logoImage__qjzBq,
+  .Header_logoPlaceholder__5POWk {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet - smaller text */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .Header_brandText__ICtYj {
+    font-size: 1.125rem;
   }
 }
 

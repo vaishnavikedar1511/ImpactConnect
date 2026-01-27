@@ -17,7 +17,15 @@ interface ContentstackCause {
   updated_at: string;
   name: string;
   slug: string;
+  description?: string;
   icon?: {
+    uid: string;
+    url: string;
+    title: string;
+    filename: string;
+    content_type: string;
+  };
+  image?: {
     uid: string;
     url: string;
     title: string;
@@ -35,6 +43,7 @@ function transformCause(entry: ContentstackCause): Cause {
     uid: entry.uid,
     name: entry.name,
     slug: entry.slug,
+    description: entry.description,
     icon: entry.icon
       ? {
           uid: entry.icon.uid,
@@ -42,6 +51,15 @@ function transformCause(entry: ContentstackCause): Cause {
           title: entry.icon.title,
           filename: entry.icon.filename,
           contentType: entry.icon.content_type,
+        }
+      : undefined,
+    image: entry.image
+      ? {
+          uid: entry.image.uid,
+          url: entry.image.url,
+          title: entry.image.title,
+          filename: entry.image.filename,
+          contentType: entry.image.content_type,
         }
       : undefined,
     color: entry.color,

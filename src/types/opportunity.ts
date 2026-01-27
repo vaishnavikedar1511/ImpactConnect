@@ -81,6 +81,7 @@ export interface OpportunityFilters {
   country?: string;
   state?: string;
   city?: string;
+  location?: string; // City slug for filtering
   causes?: string[];
   contributionTypes?: ContributionType[];
   startDate?: string;
@@ -88,6 +89,7 @@ export interface OpportunityFilters {
   isVirtual?: boolean;
   status?: OpportunityStatus[];
   search?: string;
+  organizerId?: string;
 }
 
 /**

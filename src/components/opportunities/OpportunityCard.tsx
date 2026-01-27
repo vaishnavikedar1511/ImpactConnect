@@ -8,14 +8,20 @@ import Image from 'next/image';
 import type { OpportunitySummary } from '@/types';
 import { ContributionTypeLabels } from '@/types';
 import { formatDisplayDate, formatTime, getRelativeDateLabel } from '@/lib/utils';
+import { getCauseColor, formatCauseName } from '@/lib/causeColors';
 import styles from './OpportunityCard.module.css';
 
 interface OpportunityCardProps {
   opportunity: OpportunitySummary;
   priority?: boolean;
+  causeColorMap?: Map<string, string>;
 }
 
-export function OpportunityCard({ opportunity, priority = false }: OpportunityCardProps) {
+export function OpportunityCard({ 
+  opportunity, 
+  priority = false,
+  causeColorMap
+}: OpportunityCardProps) {
   const {
     slug,
     title,
@@ -96,11 +102,23 @@ export function OpportunityCard({ opportunity, priority = false }: OpportunityCa
 
         {/* Tags */}
         <div className={styles.tags}>
-          {causeSlugs?.slice(0, 2).map((causeSlug) => (
-            <span key={causeSlug} className={`${styles.tag} ${styles.causeTag}`}>
-              {causeSlug.replace(/-/g, ' ')}
+          {causeSlugs?.slice(0, 2).map((causeSlug) => {
+            const causeColor = causeColorMap?.get(causeSlug);
+            const colors = getCauseColor(causeSlug, causeColor);
+            return (
+              <span 
+                key={causeSlug} 
+                className={`${styles.tag} ${styles.causeTag}`}
+                style={{
+                  backgroundColor: colors.bg,
+                  color: colors.text,
+                  borderColor: colors.border,
+                }}
+              >
+                {formatCauseName(causeSlug)}
             </span>
-          ))}
+            );
+          })}
           {contributionTypes?.slice(0, 1).map((type) => (
             <span key={type} className={`${styles.tag} ${styles.contributionTag}`}>
               {ContributionTypeLabels[type]}

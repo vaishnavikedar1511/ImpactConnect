@@ -4,10 +4,14 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { getErrorPagesContent } from '@/lib/contentstack';
+import { getErrorPagesContent, getNavbarContent } from '@/lib/contentstack';
 
 export default async function NotFound() {
-  const content = await getErrorPagesContent();
+  // Fetch both error pages content and navbar for logo
+  const [content, navbarContent] = await Promise.all([
+    getErrorPagesContent(),
+    getNavbarContent(),
+  ]);
 
   return (
     <div
@@ -22,6 +26,22 @@ export default async function NotFound() {
         background: 'var(--page-bg, #f9fafb)',
       }}
     >
+      {/* Logo from Navbar */}
+      <div style={{ marginBottom: '2rem', opacity: 0.8 }}>
+        {navbarContent.logo_url ? (
+          <Image
+            src={navbarContent.logo_url}
+            alt="ImpactConnect"
+            width={100}
+            height={25}
+          />
+        ) : (
+          <span style={{ fontSize: '1.25rem', fontWeight: 600 }}>
+            {navbarContent.site_name}
+          </span>
+        )}
+      </div>
+
       {content.not_found_image_url ? (
         <div style={{ marginBottom: 32, width: 200, height: 200, position: 'relative' }}>
           <Image

@@ -19,21 +19,58 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent-color, #3b82f6);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+/* Logo Wrapper */
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+/* Brand Text - PURPLE */
+.brandText {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logoImage {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .logoIcon {
   font-size: 1.75rem;
-}
-
-.logoImage {
-  height: 32px;
-  width: auto;
-  object-fit: contain;
 }
 
 .navIcon {
@@ -182,5 +219,27 @@
 @media (max-width: 480px) {
   .logo {
     font-size: 1.25rem;
+  }
+
+  /* Hide brand text on mobile, show only logo */
+  .brandText {
+    display: none;
+  }
+  
+  .logoWrapper {
+    gap: 0;
+  }
+  
+  .logoImage,
+  .logoPlaceholder {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet - smaller text */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .brandText {
+    font-size: 1.125rem;
   }
 }

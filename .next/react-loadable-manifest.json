@@ -1,1 +1,6 @@
-{}
+{
+  "components/opportunities/OpportunitiesPageClient.tsx -> @/lib/contentstack/personalize-service": {
+    "id": "components/opportunities/OpportunitiesPageClient.tsx -> @/lib/contentstack/personalize-service",
+    "files": []
+  }
+}

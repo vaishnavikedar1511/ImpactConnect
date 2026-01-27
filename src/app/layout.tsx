@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Header, FooterWrapper, AnnouncementBanner } from '@/components/layout';
 import { getNavbarContent, getFooterContent, getAnnouncementBannerContent } from '@/lib/contentstack';
+import { PersonalizeProvider } from '@/components/context/PersonalizeContext';
+import { CauseEffect } from '@/components/effects';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -32,10 +34,13 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AnnouncementBanner content={bannerContent} />
-        <Header content={navbarContent} />
-        <main>{children}</main>
-        <FooterWrapper content={footerContent} />
+        <PersonalizeProvider>
+          <CauseEffect />
+          <AnnouncementBanner content={bannerContent} />
+          <Header content={navbarContent} />
+          <main>{children}</main>
+          <FooterWrapper content={footerContent} />
+        </PersonalizeProvider>
       </body>
     </html>
   );

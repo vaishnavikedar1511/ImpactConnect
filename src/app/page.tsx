@@ -6,8 +6,12 @@
  */
 
 import Link from 'next/link';
-import { getLandingPageContent, parseLandingStats, parseLandingSteps, parseLandingCauses } from '@/lib/contentstack';
-import { CauseIcon } from '@/components/ui/CauseIcon';
+import Image from 'next/image';
+import { getLandingPageContent, getNavbarContent, parseLandingStats, parseLandingSteps } from '@/lib/contentstack';
+import { getAllCauses } from '@/lib/contentstack/taxonomies';
+import { getCarouselOpportunities } from '@/lib/contentstack/events';
+import { EventCarousel } from '@/components/events/EventCarousel';
+import { CauseCardsSection } from '@/components/layout/CauseCardsSection';
 import styles from './landing.module.css';
 
 /**
@@ -23,17 +27,27 @@ function parseHeroTitle(title: string): { before: string; highlight: string; aft
 }
 
 export default async function LandingPage() {
-  const content = await getLandingPageContent();
+  // Fetch landing page, navbar content, and causes
+  const [content, navbarContent, causes] = await Promise.all([
+    getLandingPageContent(),
+    getNavbarContent(),
+    getAllCauses(),
+  ]);
+  
   const titleParts = parseHeroTitle(content.hero_title);
   
   // Parse JSON fields
   const stats = parseLandingStats(content.stats_json);
   const steps = parseLandingSteps(content.steps_json);
-  const causes = parseLandingCauses(content.causes_json);
+  
+  // Fetch carousel opportunities (filtered by cause if specified)
+  const carouselEvents = await getCarouselOpportunities(
+    content.event_carousel_cause_filter || undefined
+  );
 
   return (
     <div className={styles.landing}>
-      {/* Hero Section */}
+      {/* Hero Section (with Logo & Brand on Image) */}
       <section 
         className={styles.hero}
         style={content.hero_background_image?.url ? {
@@ -44,6 +58,39 @@ export default async function LandingPage() {
         } : undefined}
       >
         <div className={styles.heroContent}>
+          {/* Logo & Brand on Hero Image */}
+          <div className={styles.heroBrand}>
+            <div className={styles.heroLogo}>
+              {navbarContent.logo_url ? (
+                <Image
+                  src={navbarContent.logo_url}
+                  alt="ImpactConnect Logo"
+                  width={300}
+                  height={300}
+                  priority
+                />
+              ) : (
+                <div className={styles.logoFallback}>
+                  IC
+                </div>
+              )}
+            </div>
+            <div className={styles.brandNameWrapper}>
+              <h2 className={styles.brandName}>
+                {'ImpactConnect'.split('').map((letter, index) => (
+                  <span 
+                    key={index} 
+                    className={styles.letter}
+                    style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+                  >
+                    {letter}
+                  </span>
+                ))}
+              </h2>
+              <div className={styles.brandUnderline}></div>
+            </div>
+          </div>
+          
           <h1 className={styles.heroTitle}>
             {titleParts.before}
             {titleParts.highlight && (
@@ -91,6 +138,16 @@ export default async function LandingPage() {
         )}
       </section>
 
+      {/* Event Carousel */}
+      <EventCarousel
+        title={content.event_carousel_title}
+        personalizedTitle={content.event_carousel_personalized_title}
+        ctaText={content.event_carousel_cta_text}
+        ctaLink={content.event_carousel_cta_link}
+        backgroundImage={content.event_carousel_background_image}
+        events={carouselEvents}
+      />
+
       {/* How It Works */}
       {steps && steps.length > 0 && (
         <section className={styles.howItWorks}>
@@ -109,29 +166,11 @@ export default async function LandingPage() {
 
       {/* Causes */}
       {causes && causes.length > 0 && (
-        <section 
-          className={styles.causes}
-          style={content.causes_background_image?.url ? {
-            backgroundImage: `url(${content.causes_background_image.url})`,
-          } : undefined}
-        >
-          <h2 className={styles.sectionTitle}>{content.causes_title}</h2>
-          <div className={styles.causeGrid}>
-            {causes.map((cause, index) => (
-              <Link 
-                key={index} 
-                href={`/opportunities?causes=${cause.slug}`} 
-                className={styles.causeCard}
-              >
-                <div className={styles.causeIcon}>
-                  <CauseIcon causeSlug={cause.slug} />
-                </div>
-                <h3 className={styles.causeName}>{cause.name}</h3>
-                <p className={styles.causeDesc}>{cause.description}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <CauseCardsSection
+          title={content.causes_title}
+          causes={causes}
+          backgroundImage={content.causes_background_image}
+        />
       )}
 
       {/* CTA Section */}
