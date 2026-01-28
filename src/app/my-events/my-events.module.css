@@ -2,10 +2,13 @@
 
 .page {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--page-bg, #f9fafb);
 }
 
 .container {
+  flex: 1; /* Takes up remaining space, pushing footer to bottom */
   max-width: 900px;
   margin: 0 auto;
   padding: 32px 24px;
@@ -226,11 +229,19 @@
   gap: 16px;
 }
 
+.cardHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
 .eventTitle {
   margin: 0;
   font-size: 1.0625rem;
   font-weight: 600;
   color: var(--text-primary, #111827);
+  flex: 1;
 }
 
 /* Status Badges */
@@ -287,6 +298,34 @@
   color: #92400e;
   background: #fffbeb;
   border-radius: 8px;
+}
+
+/* Dismiss Button */
+.dismissButton {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #9ca3af;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dismissButton:hover {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.dismissButton:active {
+  transform: scale(0.95);
 }
 
 /* View Button */

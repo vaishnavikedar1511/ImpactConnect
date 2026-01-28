@@ -55,16 +55,23 @@ export async function POST(request: NextRequest) {
 
     if (!createResponse.ok) {
       console.error('[Subscribe] Contentstack create error:', createData);
+      console.error('[Subscribe] Status:', createResponse.status);
+      console.error('[Subscribe] Error code:', createData.error_code);
+      console.error('[Subscribe] Error message:', createData.error_message);
       
-      // Check if already exists
-      if (createData.error_code === 119 || createData.error_message?.includes('unique')) {
+      // Check SPECIFICALLY for duplicate entry errors (error code 119)
+      if (createData.error_code === 119) {
         return NextResponse.json(
           { error: 'This email is already subscribed to this city' },
           { status: 409 }
         );
       }
-
-      throw new Error(createData.error_message || 'Failed to create subscription');
+      
+      // For other errors, return the actual error message
+      return NextResponse.json(
+        { error: createData.error_message || 'Subscription failed. Please try again later.' },
+        { status: createResponse.status }
+      );
     }
 
     // Publish the entry

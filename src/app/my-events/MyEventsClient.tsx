@@ -78,6 +78,16 @@ export function MyEventsClient({ content }: Props) {
     }
   };
 
+  const handleDismissEvent = (eventId: string) => {
+    // Remove from localStorage
+    const allEvents = getCreatedEvents();
+    const filtered = allEvents.filter(e => e.id !== eventId);
+    localStorage.setItem('impactconnect_created_events', JSON.stringify(filtered));
+    
+    // Update state
+    setPendingEvents(prev => prev.filter(e => e.id !== eventId));
+  };
+
   if (isLoading) {
     return (
       <div className={styles.page}>
@@ -168,9 +178,19 @@ export function MyEventsClient({ content }: Props) {
                     <div key={event.id} className={styles.eventCard}>
                       <div className={styles.cardHeader}>
                         <h3 className={styles.eventTitle}>{event.title}</h3>
-                        <span className={`${styles.statusBadge} ${styles.pending}`}>
-                          Pending
-                        </span>
+                        <div className={styles.cardHeaderActions}>
+                          <span className={`${styles.statusBadge} ${styles.pending}`}>
+                            Pending
+                          </span>
+                          <button
+                            onClick={() => handleDismissEvent(event.id)}
+                            className={styles.dismissButton}
+                            title="Remove from list"
+                            aria-label="Dismiss event"
+                          >
+                            ✕
+                          </button>
+                        </div>
                       </div>
                       <div className={styles.cardDetails}>
                         <div className={styles.detailItem}>
