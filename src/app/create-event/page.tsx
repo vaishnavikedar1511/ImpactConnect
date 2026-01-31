@@ -17,8 +17,10 @@ export default async function CreateEventPage() {
   const content = await getCreateEventPageContent();
   
   return (
-    <main>
-      <CreateEventForm content={content} />
+    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1 }}>
+        <CreateEventForm content={content} />
+      </div>
     </main>
   );
 }
