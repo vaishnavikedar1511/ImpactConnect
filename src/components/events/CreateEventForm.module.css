@@ -340,16 +340,23 @@
 /* Date and Time Input Styling - White Icons */
 .input[type="date"],
 .input[type="time"] {
-  color-scheme: dark;
   position: relative;
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #374151;
 }
 
-/* For WebKit browsers (Chrome, Safari, Edge) */
+.input[type="date"]:focus,
+.input[type="time"]:focus {
+  background: #1f2937;
+  border-color: var(--primary);
+}
+
 .input[type="date"]::-webkit-calendar-picker-indicator,
 .input[type="time"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
+  filter: brightness(0) invert(1);
   cursor: pointer;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .input[type="date"]::-webkit-calendar-picker-indicator:hover,
@@ -357,9 +364,8 @@
   opacity: 1;
 }
 
-/* For Firefox */
 .input[type="date"]::-moz-calendar-picker-indicator,
 .input[type="time"]::-moz-calendar-picker-indicator {
-  filter: invert(1);
+  filter: brightness(0) invert(1);
   cursor: pointer;
 }
