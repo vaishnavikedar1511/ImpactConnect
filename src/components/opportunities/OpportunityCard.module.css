@@ -3,6 +3,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: var(--card-bg, #ffffff);
   border: 1px solid var(--border-color, #e5e7eb);
   border-radius: 12px;
@@ -130,6 +131,7 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 2.625rem;
 }
 
 /* Meta Info */
