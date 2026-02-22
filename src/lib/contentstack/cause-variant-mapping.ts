@@ -22,6 +22,34 @@ const CAUSE_VARIANT_UIDS: Record<string, string> = {
 export const LANDING_PAGE_ENTRY_UID = 'blta0c7d89703e07f46';
 
 /**
+ * Announcement banner entry UID (Cause_experience variants)
+ */
+export const ANNOUNCEMENT_BANNER_ENTRY_UID = 'blt83824e53588acb6a';
+
+/**
+ * Full variant UIDs for announcement_banner entry per cause.
+ * Add variant UIDs from Contentstack after creating banner variants for each cause.
+ */
+const ANNOUNCEMENT_BANNER_VARIANT_UIDS: Record<string, string> = {
+  'environment': '',
+  'healthcare': '',
+  'animal-welfare': '',
+  'education': '',
+};
+
+/**
+ * Get full variant UID for announcement banner by cause (Cause_experience).
+ *
+ * @param causeSlug - Cause slug (e.g. 'environment', 'healthcare')
+ * @returns Full variant UID or null if not mapped
+ */
+export function getAnnouncementBannerVariantUID(causeSlug: string | null): string | null {
+  if (!causeSlug) return ANNOUNCEMENT_BANNER_VARIANT_UIDS['environment'] || null;
+  const uid = ANNOUNCEMENT_BANNER_VARIANT_UIDS[causeSlug];
+  return uid && uid.trim() ? uid : null;
+}
+
+/**
  * Get full variant UID for a cause
  * 
  * @param causeSlug - Cause slug (e.g., 'animal-welfare', 'education')
